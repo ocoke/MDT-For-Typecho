@@ -1,0 +1,11 @@
+@font-face{
+    font-family: 'Source Code';
+    src: url('https://cdn.jsdelivr.net/gh/z-cdn/Font@5d081c5/Code/SourceCodeVariable-Italic.ttf');
+}
+.alert-js{
+    background-color: #FFFF9D;
+    text-align: center;
+}
+code .code-js{
+    font-family: Source Code;
+}
