@@ -1,5 +1,15 @@
 # MDT-For-Typecho
 
+<p align="center">
+<a href='https://gitee.com/heyos/mdt-for-typecho/stargazers'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/star.svg?theme=white' alt='star'></img></a>
+<a href='https://gitee.com/heyos/mdt-for-typecho/members'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/fork.svg?theme=white' alt='fork'></img></a>
+<br/>
+<img src="https://badgen.net/github/stars/oCoke/MDT-For-Typecho" alt="GitHub Star">
+<img src="https://badgen.net/github/forks/oCoke/MDT-For-Typecho" alt="GitHub Fork">
+<img src="https://badgen.net/github/last-commit/oCoke/MDT-For-Typecho" alt="GitHub Commit">
+<img src="https://badgen.net/github/release/oCoke/MDT-For-Typecho" alt="GitHub Release">
+</p>
+
 ## 简介
 
 简洁，专注阅读的 Typecho 博客主题。
