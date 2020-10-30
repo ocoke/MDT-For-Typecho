@@ -91,14 +91,16 @@
     text-align: center;
 }
 
-.link{
-    color: #3F51B5;
-}
 
 a{
-    color: #3F51B5;
+    color: blue;
 }
 
 center{
     text-align: center;
+}
+
+#body{
+    margin: 5px;
+    padding: 5px;
 }

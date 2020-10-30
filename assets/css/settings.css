@@ -1,0 +1,126 @@
+/*
+FILENAME: setting.miracles.css
+AUTHOR: BigCoke233
+LINK: https://github.com/BigCoke233/miracles/blob/master/assets/css/setting.miracles.css
+LICENSE: SATA-BNP
+*/
+@charset 'utf-8';
+
+:root {
+	--theme-color: #4D90FE;
+}
+
+body {
+	width: 100%;
+	background: #fcfcfc;
+	font-family: 'Noto Sans SC',sans-serif;
+}
+
+hr {
+	margin: 30px 0;
+	border: none;
+	border-bottom: 1px solid #dcdcdc;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+	width: 6px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-button {
+	display: none;
+}
+
+::-webkit-scrollbar-thumb {
+	background: gray;
+}
+
+.typecho-head-nav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	padding: 15px 0;
+	-webkit-box-shadow: 0 0 30px #ddd;
+	-moz-box-shadow: 0 0 30px #ddd;
+	box-shadow: 0 0 30px #ddd;
+	font-size: 15px;
+	z-index: 10
+}
+
+.typecho-page-title {
+	visibility: hidden;
+	margin-top: 90px;
+}
+
+.typecho-option .btn,.typecho-option li input,.typecho-option li select,.typecho-option li textarea {
+	padding: 10px 12px;
+	border-color: #ddd;
+	border-radius: 4px;
+	background: #fff;
+	-webkit-box-shadow: 0 1px 5px #ddd;
+	-moz-box-shadow: 0 1px 5px #ddd;
+	box-shadow: 0 1px 5px #ddd;
+	outline: none;
+}
+
+.typecho-option li select {
+	padding: 0 4px;
+	min-width: 100px;
+}
+
+.typecho-option li textarea {
+	height: 160px!important;
+	resize: none;
+}
+
+.typecho-option li .typecho-label {
+	margin: 15px 0;
+	margin-top: 20px;
+	letter-spacing: 1px;
+	font-size: 15px;
+}
+
+.typecho-option .btn {
+	position: fixed;
+	bottom: 15px;
+	right: 15px;
+	border-radius: 4px;
+	background: #000;
+	box-shadow: 0 0 6px #bababa;
+	padding: 8px 14px;
+	font-size: 1.1em
+}
+
+.wmd-button-row {
+	height: auto!important
+}
+
+input#slug {
+	z-index: 1
+}
+
+@media (min-width:768px) {
+	.typecho-option-tabs {
+		margin-left: 122px;
+	}
+}
+
+@media (min-width:992px) {
+	.typecho-option-tabs {
+		margin-left: 160px;
+	}
+}
+
+@media (min-width:1200px) {
+	.typecho-option-tabs {
+		margin-left: 194px;
+	}
+}
+#edit-secondary .typecho-option-tabs {
+	margin-left: 0!important
+}

@@ -4,13 +4,15 @@
  * 
  * @package MDT For Typecho 
  * @author oCoke
- * @version 0.2
+ * @version 0.3
  * @link https://github.com/oCoke
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
- $this->need('header.php');
- ?>
+  
+  $this->need('header.php');
+
+?>
 
 
 

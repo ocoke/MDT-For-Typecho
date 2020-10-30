@@ -20,8 +20,11 @@
     <!-- 页面 CSS 样式 -->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/style.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/alert-js.css'); ?>">
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/hljs-github.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('assets/css/prism.css'); ?>">
     
+    <!-- ICON -->
+
+    <link rel="icon" href="<?php $this->options->themeUrl('assets/img/icon.png'); ?>">
 
     <!-- 其他 HTML 头部信息 -->
     <?php if ($this->is('post')) : ?>
@@ -34,14 +37,23 @@
     
     <?php include 'config.php' ;?>
 
+    <?php if ($this->options->customCSS): ?>
+      <style>
+      <?php $this->options->customCSS() ?>
+      </style>
+    <?php endif; ?>
+
+    <?php if ($this->options->customHeadHTML): ?>
+      <?php $this->options->customHeadHTML() ?>
+    <?php endif; ?>
 </head>
 
 <!-- 判断站点主题色，强调色 -->
-<?php if ($this->options->primaryColor && $this->options->accentColor): ?>
-<?php echo "<body class='mdui-drawer-body-left mdui-theme-primary-".$this->options->primaryColor." mdui-theme-accent-".$this->options->accentColor."'>" ; ?>
-<?php else: ?>
-<?php echo "<body class='mdui-theme-primary-indigo mdui-theme-accent-red mdui-drawer-body-left'>" ; ?>
-<?php endif; ?>
+<?php 
+
+echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $this->options->primaryColor." mdui-theme-accent-". $this->options->accentColor. " ".$this->options->autoDark . " line-numbers' >";
+
+?>
 <!-- Check For JavaScript -->
 <noscript>
 	<div class="alert-js">
@@ -51,6 +63,7 @@
 
 <!-- SideBar -->
 <div class="mdui-drawer" id="drawer"> <!-- 如果需要默认隐藏，需要添加 class "mdui-drawer-close" -->
+
 <div class="mdui-list" mdui-collapse="{accordion: true}">
           <form class="mdui-p-t-0 mdui-m-x-2 mdui-textfield mdui-textfield-floating-label" method="post">
             <label class="mdui-textfield-label">搜索</label>
@@ -84,7 +97,7 @@
 
 
 <!-- AppBar -->
-<div class="mdui-appbar">
+<div class="mdui-appbar" id="appbar">
     <div class="mdui-toolbar mdui-color-theme">
         <!-- 菜单 -->
         <!-- icon:menu -->
@@ -92,8 +105,8 @@
         <!-- 站点标题 -->
         <a href="<?php $this->options->siteUrl(); ?>" class="mdui-typo-headline"><?php $this->options->title() ?></a>
         <div class="mdui-toolbar-spacer"></div>
-        <!-- icon:search -->
-        <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe8b6;</i></a>
+        <!-- icon:brightness_high -->
+        <span class="mdui-btn mdui-btn-icon" id="dark_toggle_btn" onclick='toggleDark();'><i class="mdui-icon material-icons" id="dark_toggle_icon">&#xe1ac;</i></span>
         <!-- icon:rss_feed -->
         
         <button id="open-rss-menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe0e5;</i></button>

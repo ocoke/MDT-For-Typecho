@@ -135,19 +135,60 @@ function outputEnd($pangu, $lazyLoad) {
     echo $output;
 
 }
+
 // 设置页面
 function themeConfig($form) {
-    $primaryColor = new Typecho_Widget_Helper_Form_Element_Text('primaryColor', NULL, NULL, _t('站点主题色'), _t('可参考 MDUI 官方文档：https://www.mdui.org/docs/color'));
-    $form->addInput($primaryColor);
+    echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/oCoke/Assets@d46e5b3/mdt/settings.css'>";
+    $primaryColor = new Typecho_Widget_Helper_Form_Element_Select('primaryColor', [
+      'indigo' => 'Indigo',
+      'red' => 'Red',
+      'pink' => 'Pink',
+      'purple' => 'Purple',
+      'deep-purple' => 'Deep Purple',
+      'blue' => 'Blue',
+      'light-blue' => 'Light Blue',
+      'cyan' => 'Cyan',
+      'teal' => 'Teal',
+      'green' => 'Green',
+      'light-green' => 'Light Green',
+      'lime' => 'Lime',
+      'yellow' => 'Yellow',
+      'amber' => 'Amber',
+      'orange' => 'Orange',
+      'deep-orange' => 'Deep Orange'
+      ], '', _t('<h2>基础设置</h2>站点主题色'), _t('文档：https://heyos.gitee.io/mdt-docs/#/start/color'));
+      $form->addInput($primaryColor);
+      
     
-    $accentColor = new Typecho_Widget_Helper_Form_Element_Text('accentColor', NULL, NULL, _t('站点强调色'), _t('可参考 MDUI 官方文档：https://www.mdui.org/docs/color'));
-    $form->addInput($accentColor);
+    
+      $accentColor = new Typecho_Widget_Helper_Form_Element_Select('accentColor', [
+        'indigo' => 'Indigo',
+        'red' => 'Red',
+        'pink' => 'Pink',
+        'purple' => 'Purple',
+        'deep-purple' => 'Deep Purple',
+        'blue' => 'Blue',
+        'light-blue' => 'Light Blue',
+        'cyan' => 'Cyan',
+        'teal' => 'Teal',
+        'green' => 'Green',
+        'light-green' => 'Light Green',
+        'lime' => 'Lime',
+        'yellow' => 'Yellow',
+        'amber' => 'Amber',
+        'orange' => 'Orange',
+        'deep-orange' => 'Deep Orange'
+        ], '', _t('站点强调色'), _t('文档：https://heyos.gitee.io/mdt-docs/#/start/color'));
+        $form->addInput($accentColor);
+
+
+    
 
     // $this->options->smoothScroll
     $smoothScroll = new Typecho_Widget_Helper_Form_Element_Select('smoothScroll', [
     false => '关闭',
     true => '开启'
-    ], '', _t('顺滑滚动'), _t('将改善页面滚动时的体验，但可能会造成页面滚动时轻微掉帧'));
+    ], '', _t('<h2>高级设置</h2>顺滑滚动'), _t('将改善页面滚动时的体验，但可能会造成页面滚动时轻微掉帧'));
     $form->addInput($smoothScroll);
 
      // $this->options->lazyLoad
@@ -163,7 +204,24 @@ function themeConfig($form) {
         true => '开启'
         ], '', _t('中英文分割'), _t('(Pangu.js)'));
         $form->addInput($pangu);
+    // $this->options->autoDark
+    $autoDark = new Typecho_Widget_Helper_Form_Element_Select('autoDark', [
+      "" => '关闭',
+      "mdui-theme-layout-auto" => '开启（深色模式时将无法自主切换）'
+      ], '', _t('自动切换深色模式'), _t('将自动根据用户设备的模式切换深色模式（深色模式时将无法自主切换）'));
+      $form->addInput($autoDark);
 
+      $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', null, null, '<h2>开发者设置</h2>自定义 CSS', '在此处编辑 CSS 代码，它将会被应用至每一个页面。');
+        $form->addInput($customCSS);
+
+      $customJS = new Typecho_Widget_Helper_Form_Element_Textarea('customJS', null, null, '自定义 JavaScript', '在此处编辑 JS 代码，它将会被应用至每一个页面。');
+        $form->addInput($customJS);
+
+      $customHeadHTML = new Typecho_Widget_Helper_Form_Element_Textarea('customHeadHTML', null, null, '自定义头部 HTML', '在此处编辑头部 HTML 代码，它将会被应用至每一个页面的头部。');
+        $form->addInput($customHeadHTML);
+
+      $customFootHTML = new Typecho_Widget_Helper_Form_Element_Textarea('customFootHTML', null, null, '自定义页脚 HTML', '在此处编辑页脚 HTML 代码，它将会被应用至每一个页面的页脚。');
+        $form->addInput($customFootHTML);
     // $this->options->cdn
     // $cdn = new Typecho_Widget_Helper_Form_Element_Select('cdn', [
     //   'false' => '关闭',

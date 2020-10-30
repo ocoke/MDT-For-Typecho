@@ -4,10 +4,15 @@
     </div>
 </div><!-- end #body -->
 
+<?php if ($this->options->customFootHTML): ?>
+    <?php $this->options->customFootHTML() ?>
+<?php endif; ?>
+
+<!-- MDT For Typecho By oCoke -->
 <div id="footer" role="contentinfo" class="mdui-text-center mdui-card mdui-m-y-3">
     <p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.</p>
     <p>Powered by <a href="http://www.typecho.org">Typecho</a></p>
-    <p>Theme <a href="#">MDT</a> by <a href="https://github.com/oCoke">oCoke</a></p>
+    <p>Theme <a href="https://github.com/oCoke/MDT-For-Typecho">MDT</a> by <a href="https://github.com/oCoke">oCoke</a></p>
 </div><!-- end #footer -->
 
 <!-- MDUI JS -->
@@ -16,7 +21,7 @@
 
 <!-- Highlight.js -->
 
-<script src="<?php $this->options->themeUrl('assets/js/highlight.pack.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('assets/js/prism.js'); ?>"></script>
 
 <!-- JavaScript -->
 <script src="<?php $this->options->themeUrl('assets/js/script.js'); ?>"></script>
@@ -32,8 +37,17 @@
     
 <?php endif; ?>
 
+<script src="<?php $this->options->themeUrl('assets/js/darkmode.js'); ?>"></script>
+
 <?php outputEnd($this->options->pangu, $this->options->lazyLoad); ?>
 
 <?php $this->footer(); ?>
+
+<?php if ($this->options->customJS): ?>
+    <script>
+      <?php $this->options->customJS() ?>
+    </script>
+<?php endif; ?>
+
 </body>
 </html>

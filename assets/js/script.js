@@ -19,5 +19,7 @@ document.getElementById('toggle').addEventListener('click', function () {
     inst.toggle();
 });
 
-// HighLight.js
-hljs.initHighlightingOnLoad();
+
+
+// HeadRoom
+// var headroom = new mdui.Headroom('#appbar');
