@@ -1,13 +1,15 @@
 # MDT-For-Typecho
 
 <p align="center">
-<a href='https://gitee.com/heyos/mdt-for-typecho/stargazers'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/star.svg?theme=white' alt='star'></img></a>
-<a href='https://gitee.com/heyos/mdt-for-typecho/members'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/fork.svg?theme=white' alt='fork'></img></a>
+<a href='https://gitee.com/heyos/mdt-for-typecho/stargazers'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/star.svg?theme=white' alt='Gitee Star'></img></a>
+<a href='https://gitee.com/heyos/mdt-for-typecho/members'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/fork.svg?theme=white' alt='Gitee Fork'></img></a>
 <br/>
 <img src="https://badgen.net/github/stars/oCoke/MDT-For-Typecho" alt="GitHub Star">
 <img src="https://badgen.net/github/forks/oCoke/MDT-For-Typecho" alt="GitHub Fork">
 <img src="https://badgen.net/github/last-commit/oCoke/MDT-For-Typecho" alt="GitHub Commit">
 <img src="https://badgen.net/github/release/oCoke/MDT-For-Typecho" alt="GitHub Release">
+<img src="https://badgen.net/badge/For/Typecho/red" alt="For Typecho">
+<img src="https://badgen.net/badge/License/SATA/blue" alt="SATA">
 </p>
 
 ## 简介
