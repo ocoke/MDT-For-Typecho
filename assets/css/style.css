@@ -93,7 +93,7 @@
 
 
 a{
-    color: blue;
+    color:#448AFF;
 }
 
 center{
@@ -101,6 +101,18 @@ center{
 }
 
 #body{
-    margin: 5px;
-    padding: 5px;
+    margin: 1%;
+    padding: 1%;
+}
+
+.footer{
+    margin: 1%;
+    padding: 1%;
+}
+
+.error-page{
+    text-align: center;
+}
+.search-404{
+    width: 30%;
 }
