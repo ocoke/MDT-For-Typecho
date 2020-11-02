@@ -5,7 +5,7 @@
  * @package MDT For Typecho 
  * @author oCoke
  * @version 0.3
- * @link https://github.com/oCoke/MDT-For-Typecho
+ * @link https://github.com/oCoke/
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
