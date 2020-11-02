@@ -50,8 +50,11 @@
 
 <!-- 判断站点主题色，强调色 -->
 <?php 
-// padding-top
-echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $this->options->primaryColor." mdui-theme-accent-". $this->options->accentColor. " ".$this->options->autoDark ." ".$this->options->appbarfix." line-numbers' >";
+$mduiPrimary = $this->options->primaryColor;
+$mduiAccent = $this->options->accentColor;
+$mduiAutoDark = $this->options->autoDark;
+$mduiAppbarFix = $this->options->appbarfix;
+echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $mduiPrimary." mdui-theme-accent-". $mduiAccent. " ".$mduiAutoDark ." ".$mduiAppbarFix." line-numbers' >";
 
 ?>
 <!-- Check For JavaScript -->
