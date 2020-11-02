@@ -5,7 +5,7 @@
  * @package MDT For Typecho 
  * @author oCoke
  * @version 0.3
- * @link https://github.com/oCoke
+ * @link https://github.com/oCoke/MDT-For-Typecho
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
@@ -22,7 +22,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
       <div class="mdui-card-primary-title"><a class="mdui-text-color-theme-accent" href="<?php $this->permalink(); ?>"><?php $this->title(); ?></a></div>
       <div class="mdui-card-primary-subtitle mdui-text-color-theme-text">
         <?php $this->date(); ?>
-          <span>&nbsp;|&nbsp;</span><i class="mdui-icon material-icons">&#xe853;</i>&nbsp;<a href="<?php $this->author->permalink(); ?>" class="link"><?php $this->author(); ?></a>
+          <span>&nbsp;|&nbsp;</span><i class="mdui-icon material-icons">&#xe853;</i>&nbsp;<a class="mdui-text-color-theme-accent" href="<?php $this->author->permalink(); ?>" ><?php $this->author(); ?></a>
 
     
           <span>&nbsp;|&nbsp;</span><i class="mdui-icon material-icons">&#xe866;</i>&nbsp;<?php $this->category(' , '); ?>

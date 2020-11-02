@@ -1,20 +1,22 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 
 
-    </div>
-</div><!-- end #body -->
+    
+
 
 <?php if ($this->options->customFootHTML): ?>
     <?php $this->options->customFootHTML() ?>
 <?php endif; ?>
 
 <!-- MDT For Typecho By oCoke -->
-<div id="footer" role="contentinfo" class="mdui-text-center mdui-card mdui-m-y-3">
-    <p>&copy; <?php echo date('Y'); ?> <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.</p>
-    <p>Powered by <a href="http://www.typecho.org">Typecho</a></p>
-    <p>Theme <a href="https://github.com/oCoke/MDT-For-Typecho">MDT</a> by <a href="https://github.com/oCoke">oCoke</a></p>
+<div id="footer" role="contentinfo" class="mdui-text-center mdui-card mdui-m-y-3 footer">
+    <p>&copy; <?php echo date('Y'); ?> <a class="mdui-text-color-theme-accent" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>.</p>
+    <p>Powered by <a class="mdui-text-color-theme-accent" href="http://www.typecho.org">Typecho</a></p>
+    <p>Theme <a class="mdui-text-color-theme-accent" href="https://github.com/oCoke/MDT-For-Typecho">MDT</a> by <a class="mdui-text-color-theme-accent" href="https://github.com/oCoke">oCoke</a></p>
 </div><!-- end #footer -->
 
+</div>
+</div><!-- end #body -->
 <!-- MDUI JS -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js" integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+" crossorigin="anonymous"></script> -->
 <script src="<?php $this->options->themeUrl('assets/js/mdui.min.js'); ?>"></script>

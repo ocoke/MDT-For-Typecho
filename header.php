@@ -50,8 +50,8 @@
 
 <!-- 判断站点主题色，强调色 -->
 <?php 
-
-echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $this->options->primaryColor." mdui-theme-accent-". $this->options->accentColor. " ".$this->options->autoDark . " line-numbers' >";
+// padding-top
+echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $this->options->primaryColor." mdui-theme-accent-". $this->options->accentColor. " ".$this->options->autoDark ." ".$this->options->appbarfix." line-numbers' >";
 
 ?>
 <!-- Check For JavaScript -->
@@ -62,8 +62,9 @@ echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $this->options->p
 </noscript>
 
 <!-- SideBar -->
-<div class="mdui-drawer" id="drawer"> <!-- 如果需要默认隐藏，需要添加 class "mdui-drawer-close" -->
-
+<?php
+echo '<div class="mdui-drawer '.$this->options->menuSet.'"  id="drawer"> ';
+?>
 <div class="mdui-list" mdui-collapse="{accordion: true}">
           <form class="mdui-p-t-0 mdui-m-x-2 mdui-textfield mdui-textfield-floating-label" method="post">
             <label class="mdui-textfield-label">搜索</label>
@@ -97,7 +98,10 @@ echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $this->options->p
 
 
 <!-- AppBar -->
-<div class="mdui-appbar" id="appbar">
+<?php
+echo '<div class="mdui-appbar '.$this->options->appbarSet.'"  id="appbar"> ';
+?>
+<!-- mdui-appbar-fixed -->
     <div class="mdui-toolbar mdui-color-theme">
         <!-- 菜单 -->
         <!-- icon:menu -->

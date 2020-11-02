@@ -188,21 +188,21 @@ function themeConfig($form) {
     $smoothScroll = new Typecho_Widget_Helper_Form_Element_Select('smoothScroll', [
     false => '关闭',
     true => '开启'
-    ], '', _t('<h2>高级设置</h2>顺滑滚动'), _t('将改善页面滚动时的体验，但可能会造成页面滚动时轻微掉帧'));
+    ], '', _t('<hr/><h2>高级设置</h2>顺滑滚动'), _t('将改善页面滚动时的体验，但可能会造成页面滚动时轻微掉帧'));
     $form->addInput($smoothScroll);
 
      // $this->options->lazyLoad
     $lazyLoad = new Typecho_Widget_Helper_Form_Element_Select('lazyLoad', [
         false => '关闭',
         true => '开启'
-        ], '', _t('LazyLoad'), _t('图片懒加载'));
+        ], '', _t('LazyLoad'), _t('开启图片懒加载后，站点内的图片都会使用懒加载加载。不影响 SEO。'));
         $form->addInput($lazyLoad);
         
      // $this->options->pangu
      $pangu = new Typecho_Widget_Helper_Form_Element_Select('pangu', [
         false => '关闭',
         true => '开启'
-        ], '', _t('中英文分割'), _t('(Pangu.js)'));
+        ], '', _t('中英文分割'), _t('使用 Pangu.php 对页面内的中英文，中文数字之间添加空格保证美观。'));
         $form->addInput($pangu);
     // $this->options->autoDark
     $autoDark = new Typecho_Widget_Helper_Form_Element_Select('autoDark', [
@@ -211,7 +211,27 @@ function themeConfig($form) {
       ], '', _t('自动切换深色模式'), _t('将自动根据用户设备的模式切换深色模式（深色模式时将无法自主切换）'));
       $form->addInput($autoDark);
 
-      $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', null, null, '<h2>开发者设置</h2>自定义 CSS', '在此处编辑 CSS 代码，它将会被应用至每一个页面。');
+      // $this->options->menuSet
+    $menuSet = new Typecho_Widget_Helper_Form_Element_Select('menuSet', [
+      "" => '关闭',
+      "mdui-drawer-close" => '开启'
+      ], '', _t('侧边栏自动隐藏'), _t('侧边栏会自动隐藏，需手动打开，更专注于阅读。'));
+      $form->addInput($menuSet);
+
+      
+      $appbarSet = new Typecho_Widget_Helper_Form_Element_Select('appbarSet', [
+        "" => '关闭',
+        "mdui-appbar-fixed " => '开启'
+        ], '', _t('顶部导航栏固定'), _t('使顶部导航栏固定在页面顶部'));
+        $form->addInput($appbarSet);
+
+        $appbarfix = new Typecho_Widget_Helper_Form_Element_Select('appbarfix', [
+          "" => '关闭（使用「导航栏固定」请务必开启）',
+          "mdui-appbar-with-toolbar" => '开启'
+          ], '', _t('导航栏固定 - 修复'), _t('如您使用「导航栏固定」请务必开启！'));
+          $form->addInput($appbarfix);
+
+      $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', null, null, '<hr/><h2>开发者设置</h2>自定义 CSS', '在此处编辑 CSS 代码，它将会被应用至每一个页面。');
         $form->addInput($customCSS);
 
       $customJS = new Typecho_Widget_Helper_Form_Element_Textarea('customJS', null, null, '自定义 JavaScript', '在此处编辑 JS 代码，它将会被应用至每一个页面。');
@@ -242,6 +262,7 @@ function themeConfig($form) {
 // 文章摘要
 // $this->fields->excerpt;
 function themeFields(Typecho_Widget_Helper_Layout $layout) {
+  echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/oCoke/Assets@d46e5b3/mdt/settings.css'>";
 	$excerpt = new Typecho_Widget_Helper_Form_Element_Text('excerpt', NULL, NULL,_t('文章摘要'), _t('输入一段文本来自定义摘要，如果为空则自动提取文章前 130 字。'));
     $layout->addItem($excerpt);
 }
