@@ -35,7 +35,7 @@
 
     <?php endif; ?>
     
-    <?php include 'config.php' ;?>
+    
 
     <?php if ($this->options->customCSS): ?>
       <style>
