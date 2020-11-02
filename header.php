@@ -50,11 +50,13 @@
 
 <!-- 判断站点主题色，强调色 -->
 <?php 
+
 $mduiPrimary = $this->options->primaryColor;
 $mduiAccent = $this->options->accentColor;
 $mduiAutoDark = $this->options->autoDark;
 $mduiAppbarFix = $this->options->appbarfix;
-echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $mduiPrimary." mdui-theme-accent-". $mduiAccent. " ".$mduiAutoDark ." ".$mduiAppbarFix." line-numbers' >";
+
+echo "<body class='mdui-theme-primary-". $mduiPrimary." mdui-theme-accent-". $mduiAccent. " ".$mduiAutoDark ." ".$mduiAppbarFix." line-numbers' >";
 
 ?>
 <!-- Check For JavaScript -->
@@ -65,9 +67,8 @@ echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $mduiPrimary." md
 </noscript>
 
 <!-- SideBar -->
-<?php
-echo '<div class="mdui-drawer '.$this->options->menuSet.'"  id="drawer"> ';
-?>
+<div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height"  id="drawer"> ';
+
 <div class="mdui-list" mdui-collapse="{accordion: true}">
           <form class="mdui-p-t-0 mdui-m-x-2 mdui-textfield mdui-textfield-floating-label" method="post">
             <label class="mdui-textfield-label">搜索</label>

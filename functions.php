@@ -211,12 +211,6 @@ function themeConfig($form) {
       ], '', _t('自动切换深色模式'), _t('将自动根据用户设备的模式切换深色模式（深色模式时将无法自主切换）'));
       $form->addInput($autoDark);
 
-      // $this->options->menuSet
-    $menuSet = new Typecho_Widget_Helper_Form_Element_Select('menuSet', [
-      "" => '关闭',
-      "mdui-drawer-close" => '开启'
-      ], '', _t('侧边栏自动隐藏'), _t('侧边栏会自动隐藏，需手动打开，更专注于阅读。'));
-      $form->addInput($menuSet);
 
       
       $appbarSet = new Typecho_Widget_Helper_Form_Element_Select('appbarSet', [
