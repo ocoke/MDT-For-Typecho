@@ -183,4 +183,8 @@ center{
     z-index: 2;
     width: 100%;
     left: 0;
+
+}
+.main .mdui-theme-layout-dark{
+    background-color: #212121;
 }
