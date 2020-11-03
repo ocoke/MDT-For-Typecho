@@ -188,3 +188,6 @@ center{
 .main .mdui-theme-layout-dark{
     background-color: #212121;
 }
+#drawer .mdui-theme-layout-dark{
+    background-color: #212121;
+}
