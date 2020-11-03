@@ -36,12 +36,7 @@ function dark() {
         mdui.$(".load-indicator").addClass("load-indicator-dark")
 }
 
-// 获取现在的模式
-if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    dark();
-} else {
-    light();
-}
+
 
 
 
