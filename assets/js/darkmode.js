@@ -35,35 +35,6 @@ function dark() {
         mdui.$("footer").removeClass("mdui-color-theme"),
         mdui.$(".load-indicator").addClass("load-indicator-dark")
 }
-function setExpire(a) {
-    a ? 7 > (e = new Date).getHours() ? setCookie("DARK_EXPIRE", new Date(e.getFullYear(), e.getMonth(), e.getDate(), 7).getTime()) : setCookie("DARK_EXPIRE", new Date(e.getFullYear(), e.getMonth(), e.getDate() + 1, 7).getTime()) : 6 < (e = new Date).getHours() && 20 > e.getHours() ? setCookie("DARK_EXPIRE", new Date(e.getFullYear(), e.getMonth(), e.getDate(), 20).getTime()) : setCookie("DARK_EXPIRE", (20 <= e.getHours() ? new Date(e.getFullYear(), e.getMonth(), e.getDate() + 1, 7) : new Date(e.getFullYear(), e.getMonth(), e.getDate(), 7)).getTime())
-}
-function toggleDark() {
-    "1" == getCookie("DARK_STATUS") ? (light(),
-        setExpire(0)) : (dark(),
-            setExpire(1))
-}
-function darkInit() {
-    (e = new Date).getTime() > getCookie("DARK_EXPIRE") ? (setCookie("DARK_EXPIRE", "0"),
-        1 == getCookie("AUTO_DARK") ? 6 < (e = new Date).getHours() && 20 > e.getHours() ? (light(),
-            setExpire(0)) : (dark(),
-                setExpire(1)) : (light(),
-                    setExpire(0))) : 1 == getCookie("DARK_STATUS") ? dark() : light()
-}
-window.matchMedia("(prefers-color-scheme: dark)").addListener(a => {
-    1 == getCookie("AUTO_DARK") && (a.matches ? (dark(),
-        setExpire(1)) : (light(),
-            setExpire(0)))
-}
-),
-    mdui.$(function () {
-        darkInit(),
-            1 == getCookie("AUTO_DARK") && window.matchMedia("prefers-color-scheme: dark").matches && (dark(),
-                setCookie("DARK_EXPIRE", "0"))
-    });
-
-
-
 // 自动切换
 window.onload = function () {
 
@@ -109,3 +80,33 @@ window.onload = function () {
             }
         });
 };
+
+function setExpire(a) {
+    a ? 7 > (e = new Date).getHours() ? setCookie("DARK_EXPIRE", new Date(e.getFullYear(), e.getMonth(), e.getDate(), 7).getTime()) : setCookie("DARK_EXPIRE", new Date(e.getFullYear(), e.getMonth(), e.getDate() + 1, 7).getTime()) : 6 < (e = new Date).getHours() && 20 > e.getHours() ? setCookie("DARK_EXPIRE", new Date(e.getFullYear(), e.getMonth(), e.getDate(), 20).getTime()) : setCookie("DARK_EXPIRE", (20 <= e.getHours() ? new Date(e.getFullYear(), e.getMonth(), e.getDate() + 1, 7) : new Date(e.getFullYear(), e.getMonth(), e.getDate(), 7)).getTime())
+}
+function toggleDark() {
+    "1" == getCookie("DARK_STATUS") ? (light(),
+        setExpire(0)) : (dark(),
+            setExpire(1))
+}
+function darkInit() {
+    (e = new Date).getTime() > getCookie("DARK_EXPIRE") ? (setCookie("DARK_EXPIRE", "0"),
+        1 == getCookie("AUTO_DARK") ? 6 < (e = new Date).getHours() && 20 > e.getHours() ? (light(),
+            setExpire(0)) : (dark(),
+                setExpire(1)) : (light(),
+                    setExpire(0))) : 1 == getCookie("DARK_STATUS") ? dark() : light()
+}
+window.matchMedia("(prefers-color-scheme: dark)").addListener(a => {
+    1 == getCookie("AUTO_DARK") && (a.matches ? (dark(),
+        setExpire(1)) : (light(),
+            setExpire(0)))
+}
+),
+    mdui.$(function () {
+        darkInit(),
+            1 == getCookie("AUTO_DARK") && window.matchMedia("prefers-color-scheme: dark").matches && (dark(),
+                setCookie("DARK_EXPIRE", "0"))
+    });
+
+
+
