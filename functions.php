@@ -213,17 +213,10 @@ function themeConfig($form) {
 
 
       
-      $appbarSet = new Typecho_Widget_Helper_Form_Element_Select('appbarSet', [
-        "" => '关闭',
-        "mdui-appbar-fixed " => '开启'
-        ], '', _t('顶部导航栏固定'), _t('使顶部导航栏固定在页面顶部'));
-        $form->addInput($appbarSet);
+      
 
-        $appbarfix = new Typecho_Widget_Helper_Form_Element_Select('appbarfix', [
-          "" => '关闭（使用「导航栏固定」请务必开启）',
-          "mdui-appbar-with-toolbar" => '开启'
-          ], '', _t('导航栏固定 - 修复'), _t('如您使用「导航栏固定」请务必开启！'));
-          $form->addInput($appbarfix);
+
+
 
       $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', null, null, '<hr/><h2>开发者设置</h2>自定义 CSS', '在此处编辑 CSS 代码，它将会被应用至每一个页面。');
         $form->addInput($customCSS);

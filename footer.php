@@ -2,7 +2,7 @@
 
 
     
-
+</div>
 
 <?php if ($this->options->customFootHTML): ?>
     <?php $this->options->customFootHTML() ?>

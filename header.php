@@ -53,57 +53,18 @@
 
 $mduiPrimary = $this->options->primaryColor;
 $mduiAccent = $this->options->accentColor;
-$mduiAutoDark = $this->options->autoDark;
-$mduiAppbarFix = $this->options->appbarfix;
 
-echo "<body class='mdui-theme-primary-". $mduiPrimary." mdui-theme-accent-". $mduiAccent. " ".$mduiAutoDark ." ".$mduiAppbarFix." line-numbers' >";
+
+
+echo "<body class='mdui-theme-primary-". $mduiPrimary." mdui-theme-accent-". $mduiAccent."  line-numbers' >";
 
 ?>
-<!-- Check For JavaScript -->
-<noscript>
-	<div class="alert-js">
-		<p>啊哦，<code class="code-js"> JavaScript </code>似乎无法正常使用。请尝试打开<code class="code-js"> JavaScript </code>以获得最佳体验！</p>
-	</div>
-</noscript>
-
-<!-- SideBar -->
-<div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height"  id="drawer"> ';
-
-<div class="mdui-list" mdui-collapse="{accordion: true}">
-          <form class="mdui-p-t-0 mdui-m-x-2 mdui-textfield mdui-textfield-floating-label" method="post">
-            <label class="mdui-textfield-label">搜索</label>
-            <input class="mdui-textfield-input" type="text" name="s" />
-          </form>
-          <div class="mdui-divider"></div>
-
-          <a href="<?php $this->options->siteUrl(); ?>" class="mdui-list-item mdui-ripple" id="home-url">
-            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
-            <div class="mdui-list-item-content mdui-m-r-4">首页</div>
-          </a>
-
-        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
-        <?php if ($pages->have()): ?>
-          <?php while ($pages->next()): ?>
-            <a href="<?php $pages->permalink(); ?>" class="mdui-list-item mdui-ripple">
-              <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
-              <div class="mdui-list-item-content mdui-m-r-4"><?php $pages->title(); ?></div>
-            </a>
-          <?php endwhile; ?>
-          <div class="mdui-divider"></div>
-        <?php endif; ?>
-</div>
-</div>
-
-
-
-
-
 <div id="menu-body">
 
 
 <!-- AppBar -->
 <?php
-echo '<div class="mdui-appbar '.$this->options->appbarSet.'"  id="appbar"> ';
+echo '<div class="mdui-appbar appbar"  id="appbar"> ';
 ?>
 <!-- mdui-appbar-fixed -->
     <div class="mdui-toolbar mdui-color-theme">
@@ -130,6 +91,59 @@ echo '<div class="mdui-appbar '.$this->options->appbarSet.'"  id="appbar"> ';
     </div>
 </div>
 </div>
+<!-- SideBar -->
+<div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height"  id="drawer"> 
+
+<div class="mdui-list" mdui-collapse="{accordion: true}">
+          <form class="mdui-p-t-0 mdui-m-x-2 mdui-textfield mdui-textfield-floating-label" method="post">
+            <label class="mdui-textfield-label">搜索</label>
+            <input class="mdui-textfield-input" type="text" name="s" />
+          </form>
+          <div class="mdui-divider"></div>
+
+          <a href="<?php $this->options->siteUrl(); ?>" class="mdui-list-item mdui-ripple" id="home-url">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
+            <div class="mdui-list-item-content mdui-m-r-4">首页</div>
+          </a>
+
+        <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>
+        <?php if ($pages->have()): ?>
+          <?php while ($pages->next()): ?>
+            <a href="<?php $pages->permalink(); ?>" class="mdui-list-item mdui-ripple">
+              <i class="mdui-list-item-icon mdui-icon material-icons">&#xe86e;</i>
+              <div class="mdui-list-item-content mdui-m-r-4"><?php $pages->title(); ?></div>
+            </a>
+          <?php endwhile; ?>
+          <div class="mdui-divider"></div>
+        <?php endif; ?>
+</div>
+</div>
+
+<div class="theFirstPage" style="background-image: url(https://www.yangshangzhen.com/bing/wallpaper); opacity: 1 !important; transition: opacity 0s ease 0s !important;"></div>
+
+<div class="theFirstPageSay mdui-valign mdui-typo mdui-text-color-white-text">
+ <h1 class="mdui-center">简洁，专注阅读的 Typecho 博客主题</h1>
+ <br/>
+ 
+
+</div>
+
+<div class="main">
+
+<!-- Check For JavaScript -->
+<noscript>
+	<div class="alert-js">
+		<p>啊哦，<code class="code-js"> JavaScript </code>似乎无法正常使用。请尝试打开<code class="code-js"> JavaScript </code>以获得最佳体验！</p>
+	</div>
+</noscript>
+
+
+
+
+
+
+
+
 
 
 <div id="body">
