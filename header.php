@@ -92,7 +92,7 @@ echo '<div class="mdui-appbar appbar"  id="appbar"> ';
 </div>
 </div>
 <!-- SideBar -->
-<div class="mdui-drawer mdui-color-white mdui-drawer-close mdui-drawer-full-height"  id="drawer"> 
+<div class="mdui-drawer mdui-drawer-close mdui-drawer-full-height"  id="drawer"> 
 
 <div class="mdui-list" mdui-collapse="{accordion: true}">
           <form class="mdui-p-t-0 mdui-m-x-2 mdui-textfield mdui-textfield-floating-label" method="post">

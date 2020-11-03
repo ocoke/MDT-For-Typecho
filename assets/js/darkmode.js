@@ -65,45 +65,47 @@ window.matchMedia("(prefers-color-scheme: dark)").addListener(a => {
 
 
 // 自动切换
-window.onload = function() {
+window.onload = function () {
 
-	function darkCheck() {
-		// 深色模式
-		mdui.$("#dark_toggle_icon").html("&#xe3ac;"),
-		mdui.$("#color_chrome").attr("content", "#212121"),
-		mdui.$("#color_safari").attr("content", "#212121"),
-		mdui.$("body").addClass("mdui-theme-layout-dark"),
-		mdui.$("footer").removeClass("mdui-color-theme"),
-		mdui.$(".load-indicator").addClass("load-indicator-dark")
+    function darkCheck() {
+        setCookie("DARK_STATUS", "1"),
+            // 深色模式
+            mdui.$("#dark_toggle_icon").html("&#xe3ac;"),
+            mdui.$("#color_chrome").attr("content", "#212121"),
+            mdui.$("#color_safari").attr("content", "#212121"),
+            mdui.$("body").addClass("mdui-theme-layout-dark"),
+            mdui.$("footer").removeClass("mdui-color-theme"),
+            mdui.$(".load-indicator").addClass("load-indicator-dark")
 
-	}
+    }
 
-	function lightCheck() {
-		// 浅色模式
-		mdui.$("#dark_toggle_icon").html("&#xe3a9;"),
-		mdui.$("#color_chrome").attr("content", "#" + getCookie("THEME_COLOR")),
-		mdui.$("#color_safari").attr("content", "#" + getCookie("THEME_COLOR")),
-		mdui.$("body").removeClass("mdui-theme-layout-dark"),
-		mdui.$("footer").addClass("mdui-color-theme"),
-		mdui.$(".load-indicator").removeClass("load-indicator-dark")
-	}
+    function lightCheck() {
+        setCookie("DARK_STATUS", "0"),
+            // 浅色模式
+            mdui.$("#dark_toggle_icon").html("&#xe3a9;"),
+            mdui.$("#color_chrome").attr("content", "#" + getCookie("THEME_COLOR")),
+            mdui.$("#color_safari").attr("content", "#" + getCookie("THEME_COLOR")),
+            mdui.$("body").removeClass("mdui-theme-layout-dark"),
+            mdui.$("footer").addClass("mdui-color-theme"),
+            mdui.$(".load-indicator").removeClass("load-indicator-dark")
+    }
 
-	// 获取现在的模式
-	if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-		darkCheck();
-	} else {
-		lightCheck();
-	}
-
-	// 监听模式变更
-    window
-    .matchMedia("(prefers-color-scheme: dark)")
-    .addEventListener("change", (e) => {
-      const newColorScheme = e.matches ? "dark" : "light";
-      if (newColorScheme == "dark") {
+    // 获取现在的模式
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
         darkCheck();
-      } else if (newColorScheme == "light") {
+    } else {
         lightCheck();
-      }
-    });
+    }
+
+    // 监听模式变更
+    window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (e) => {
+            const newColorScheme = e.matches ? "dark" : "light";
+            if (newColorScheme == "dark") {
+                darkCheck();
+            } else if (newColorScheme == "light") {
+                lightCheck();
+            }
+        });
 };
