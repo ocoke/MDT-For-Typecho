@@ -27,7 +27,7 @@
     <link rel="icon" href="<?php $this->options->themeUrl('assets/img/icon.png'); ?>">
 
     <!-- 其他 HTML 头部信息 -->
-    <?php if ($this->is('post')) : ?>
+    <?php if ($this->is('post') || $this->is('page')) : ?>
       <?php echo '<meta name="description" content="'.$this->fields->excerpt.'" />'; ?>
       <?php $this->header('description='); ?>
     <?php else: ?>
@@ -119,15 +119,58 @@ echo '<div class="mdui-appbar appbar"  id="appbar"> ';
 </div>
 </div>
 
-<div class="theFirstPage" style="background-image: url(https://www.yangshangzhen.com/bing/wallpaper); opacity: 1 !important; transition: opacity 0s ease 0s !important;"></div>
+<?php 
 
-<div class="theFirstPageSay mdui-valign mdui-typo mdui-text-color-white-text">
- <h1 class="mdui-center">简洁，专注阅读的 Typecho 博客主题</h1>
+if ($this->is('post') || $this->is('page')) {
+  // 如果这是文章或单独的页面
+  if(!$this->fields->postImage){
+    // 如果没有设置单独的图片
+    $postBannerimg = $this->options->bannerImage;
+  }else{
+    // 有设置单独的图片
+    $postBannerimg = $this->fields->postImage;
+  }
+  // 输出 CSS
+  echo "<style>.bannerImage{background-image: url(".$postBannerimg."); opacity: 1 !important; transition: opacity 0s ease 0s !important;}</style>";
+}else{
+  // 不是文章或图片
+  // 输出 CSS
+echo "<style>.bannerImage{background-image: url(".$this->options->bannerImage."); opacity: 1 !important; transition: opacity 0s ease 0s !important;}</style>";
+}
+?>
+
+<div class="theFirstPage bannerImage"></div>
+
+<div id="banner" class="theFirstPageSay mdui-valign mdui-typo mdui-text-color-white-text">
+ <h1 class="mdui-center"><?php 
+ // 如果标题有内容
+ if($this->archiveTitle(array(
+  'category'  =>  _t('分类 %s 下的文章'),
+  'search'    =>  _t('包含关键字 %s 的文章'),
+  'tag'       =>  _t('标签 %s 下的文章'),
+  'author'    =>  _t('%s 发布的文章')
+), '') ){
+  // 直接输出当前标题
+  $this->archiveTitle(array(
+  'category'  =>  _t('分类 %s 下的文章'),
+  'search'    =>  _t('包含关键字 %s 的文章'),
+  'tag'       =>  _t('标签 %s 下的文章'),
+  'author'    =>  _t('%s 发布的文章')
+), ''); }else{
+
+  // 标题无内容
+
+  if($this->is('index')){
+    // 且是在首页
+    // 输出 Slogan
+    echo $this->options->pageSlogan;
+  }
+} ?></h1>
  <br/>
- 
 
 </div>
 
+</div>
 <div class="main">
 
 <!-- Check For JavaScript -->

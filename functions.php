@@ -181,9 +181,11 @@ function themeConfig($form) {
         ], '', _t('站点强调色'), _t('文档：https://heyos.gitee.io/mdt-docs/#/start/color'));
         $form->addInput($accentColor);
 
-
+      $pageSlogan = new Typecho_Widget_Helper_Form_Element_Text('pageSlogan', NULL, NULL, _t('首页 Banner 文字'), _t('该文字将会被输出在首页 Banner 上'));
+        $form->addInput($pageSlogan);
     
-
+      $bannerImage = new Typecho_Widget_Helper_Form_Element_Text('bannerImage', NULL, NULL, _t('Banner 图片'), _t('Banner 背景图片（文章需要另外设置）'));
+        $form->addInput($bannerImage);
     // $this->options->smoothScroll
     $smoothScroll = new Typecho_Widget_Helper_Form_Element_Select('smoothScroll', [
     false => '关闭',
@@ -247,6 +249,8 @@ function themeFields(Typecho_Widget_Helper_Layout $layout) {
   echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/oCoke/Assets@d46e5b3/mdt/settings.css'>";
 	$excerpt = new Typecho_Widget_Helper_Form_Element_Text('excerpt', NULL, NULL,_t('文章摘要'), _t('输入一段文本来自定义摘要，如果为空则自动提取文章前 130 字。'));
     $layout->addItem($excerpt);
+  $postImage = new Typecho_Widget_Helper_Form_Element_Text('postImage', NULL, NULL,_t('文章 Banner 图片'), _t('文章 Banner 图片链接，不输入则与默认 Banner 图保持一致。'));
+    $layout->addItem($postImage);
 }
 
 
