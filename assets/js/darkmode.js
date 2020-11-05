@@ -22,8 +22,8 @@ function light() {
         mdui.$("#color_chrome").attr("content", "#" + getCookie("THEME_COLOR")),
         mdui.$("#color_safari").attr("content", "#" + getCookie("THEME_COLOR")),
         mdui.$("body").removeClass("mdui-theme-layout-dark"),
-        mdui.$("footer").addClass("mdui-color-theme"),
-        mdui.$(".load-indicator").removeClass("load-indicator-dark")
+        mdui.$(".load-indicator").removeClass("load-indicator-dark"),
+        mdui.$("#drawer").addClass("mdui-color-black")
 }
 // 深色模式
 function dark() {
@@ -32,8 +32,8 @@ function dark() {
         mdui.$("#color_chrome").attr("content", "#212121"),
         mdui.$("#color_safari").attr("content", "#212121"),
         mdui.$("body").addClass("mdui-theme-layout-dark"),
-        mdui.$("footer").removeClass("mdui-color-theme"),
-        mdui.$(".load-indicator").addClass("load-indicator-dark")
+        mdui.$(".load-indicator").addClass("load-indicator-dark"),
+        mdui.$("#drawer").addClass("mdui-color-black")
 }
 
 
