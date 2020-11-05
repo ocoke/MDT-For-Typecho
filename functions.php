@@ -204,12 +204,7 @@ function themeConfig($form) {
         true => '开启'
         ], '', _t('中英文分割'), _t('使用 Pangu.php 对页面内的中英文，中文数字之间添加空格保证美观。'));
         $form->addInput($pangu);
-    // $this->options->autoDark
-    $autoDark = new Typecho_Widget_Helper_Form_Element_Select('autoDark', [
-      "" => '关闭',
-      "mdui-theme-layout-auto" => '开启（深色模式时将无法自主切换）'
-      ], '', _t('自动切换深色模式'), _t('将自动根据用户设备的模式切换深色模式（深色模式时将无法自主切换）'));
-      $form->addInput($autoDark);
+    
 
 
       
