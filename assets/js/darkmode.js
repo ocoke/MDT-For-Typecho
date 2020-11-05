@@ -23,7 +23,7 @@ function light() {
         mdui.$("#color_safari").attr("content", "#" + getCookie("THEME_COLOR")),
         mdui.$("body").removeClass("mdui-theme-layout-dark"),
         mdui.$(".load-indicator").removeClass("load-indicator-dark"),
-        mdui.$("#drawer").addClass("mdui-color-black")
+        mdui.$("#drawer").addClass("mdui-color-white")
 }
 // 深色模式
 function dark() {

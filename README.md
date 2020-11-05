@@ -1,8 +1,8 @@
 # MDT-For-Typecho
 
 <p align="center">
-<a href='https://gitee.com/heyos/mdt-for-typecho/stargazers'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/star.svg?theme=white' alt='Gitee Star'></img></a>
-<a href='https://gitee.com/heyos/mdt-for-typecho/members'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/fork.svg?theme=white' alt='Gitee Fork'></img></a>
+<img src='https://gitee.com/heyos/mdt-for-typecho/badge/star.svg?theme=white' alt='Gitee Star'></img>
+<img src='https://gitee.com/heyos/mdt-for-typecho/badge/fork.svg?theme=white' alt='Gitee Fork'></img>
 <br/>
 <img src="https://badgen.net/github/stars/oCoke/MDT-For-Typecho" alt="GitHub Star">
 <img src="https://badgen.net/github/forks/oCoke/MDT-For-Typecho" alt="GitHub Fork">
@@ -22,7 +22,7 @@
 
 文档：[https://heyos.gitee.io/mdt-docs](https://heyos.gitee.io/mdt-docs)
 
-预览站：[https://blog.hifun.site](https://blog.hifun.site)
+预览站：[https://mdt.hifun.site](https://mdt.hifun.site)
 
 ## 特性
 
