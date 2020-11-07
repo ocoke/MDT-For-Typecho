@@ -1,15 +1,9 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
-    <div class="mdui-typo mdui-text-center">
-        <h3 class="archive-title"><?php $this->archiveTitle(array(
-            'category'  =>  _t('分类「%s」下的文章'),
-            'search'    =>  _t('包含关键字「%s」的文章'),
-            'tag'       =>  _t('标签「%s」下的文章'),
-            'author'    =>  _t('作者「%s」发布的文章')
-        ), '', ''); ?></h3>
+    
 
-    </div>
+
         <?php if ($this->have()): ?>
         <!-- 如果有相关内容，则进入 while 循环打印相关文章 -->
     	<?php while ($this->next()): ?>
