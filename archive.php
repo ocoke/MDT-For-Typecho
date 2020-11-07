@@ -7,21 +7,19 @@
         <?php if ($this->have()): ?>
         <!-- 如果有相关内容，则进入 while 循环打印相关文章 -->
     	<?php while ($this->next()): ?>
-  <div class="mdui-card mdui-hoverable mdui-m-y-3">
+<div class="mdui-card mdui-hoverable mdui-m-y-3">
     <div class="mdui-card-primary">
       <div class="mdui-card-primary-title"><a class="mdui-text-color-theme-accent" href="<?php $this->permalink(); ?>"><?php $this->title(); ?></a></div>
       <div class="mdui-card-primary-subtitle mdui-text-color-theme-text">
         <?php $this->date(); ?>
-          <span>&nbsp;|&nbsp;</span><i class="mdui-icon material-icons">&#xe853;</i>&nbsp;<a href="<?php $this->author->permalink(); ?>" class="link"><?php $this->author(); ?></a>
+          <span>&nbsp;|&nbsp;</span><i class="mdui-icon material-icons">&#xe853;</i>&nbsp;<a class="mdui-text-color-theme-accent" href="<?php $this->author->permalink(); ?>" ><?php $this->author(); ?></a>
 
     
           <span>&nbsp;|&nbsp;</span><i class="mdui-icon material-icons">&#xe866;</i>&nbsp;<?php $this->category(' , '); ?>
 
       </div>
     </div>
-    <?php
-    $excerpt = $this->fields->excerpt;
-    ?>
+    
     <!-- 文章简介 -->
     <div class="mdui-card-content mdui-typo">
     <?php if($this->fields->excerpt && $this->fields->excerpt!='') {
@@ -32,12 +30,13 @@
 				echo $this->excerpt(130);
 		}
 		?>
+    
+    </div>
     <div class="mdui-card-actions">
       <a class="mdui-btn mdui-ripple mdui-text-color-theme-accent" href="<?php $this->permalink(); ?>">继续阅读</a>
     </div>
   </div>
-  </div>
-<?php endwhile; ?>
+        <?php endwhile; ?>
     	
         <?php else: ?>
           <div class="mdui-typo mdui-text-center">
