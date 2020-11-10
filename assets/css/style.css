@@ -101,13 +101,13 @@ center{
 }
 
 #body{
-    margin: 1%;
-    padding: 1%;
+    margin: 2%;
+    padding:2%;
 }
 
 .footer{
-    margin: 1%;
-    padding: 1%;
+    margin: 3%;
+    padding: 2%;
 }
 
 .error-page{
@@ -183,4 +183,72 @@ center{
     width: 100%;
     left: 0;
 
+}
+.custom-block .custom-block-title {
+    font-weight: 600;
+    margin-bottom: -.4rem
+}
+
+.custom-block.danger,.custom-block.tip,.custom-block.warning {
+    padding: .1rem 1.5rem;
+    border-left-width: .5rem;
+    border-left-style: solid;
+    margin: 1rem 0
+}
+
+
+
+.custom-block.warning {
+    background-color: rgba(255,229,100,.3);
+    border-color: #e7c000;
+    color: #6b5900
+}
+
+.custom-block.warning .custom-block-title {
+    color: #b29400
+}
+
+.custom-block.warning a {
+    color: #2c3e50
+}
+
+
+
+
+
+
+
+.custom-block.warning {
+    padding: .1rem 1.5rem;
+    border-left-width: .5rem;
+    border-left-style: solid;
+    margin: 1rem 0
+}
+
+
+.custom-block.warning {
+    background-color: rgba(255,229,100,.3);
+    border-color: #e7c000;
+    color: #6b5900
+}
+
+.custom-block.warning .custom-block-title {
+    color: #b29400
+}
+
+.custom-block.warning a {
+    color: #2c3e50
+}
+
+.post-content,.post-meta,#comments{
+    margin: 3%!important;
+}
+.post-content p{
+    font-size: 16px;
+}
+.post-content h3{
+    font-size: 1.7em!important;
+}
+.post-content h4{
+    font-size: 1.6em!important;
 }

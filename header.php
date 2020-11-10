@@ -74,6 +74,9 @@ echo '<div class="mdui-appbar appbar"  id="appbar"> ';
         <!-- 站点标题 -->
         <a href="<?php $this->options->siteUrl(); ?>" class="mdui-typo-headline"><?php $this->options->title() ?></a>
         <div class="mdui-toolbar-spacer"></div>
+
+        <!-- SenWeater -->
+        
         <!-- icon:brightness_high -->
         <span class="mdui-btn mdui-btn-icon" id="dark_toggle_btn" onclick='toggleDark();'><i class="mdui-icon material-icons" id="dark_toggle_icon">&#xe1ac;</i></span>
         <!-- icon:rss_feed -->
@@ -167,6 +170,15 @@ echo "<style>.bannerImage{background-image: url(".$this->options->bannerImage.")
   }
 } ?></h1>
  <br/>
+
+
+<div>
+
+
+
+
+
+</div>
 
 </div>
 

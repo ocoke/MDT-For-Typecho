@@ -186,6 +186,9 @@ function themeConfig($form) {
     
       $bannerImage = new Typecho_Widget_Helper_Form_Element_Text('bannerImage', NULL, NULL, _t('Banner 图片'), _t('Banner 背景图片（文章需要另外设置）'));
         $form->addInput($bannerImage);
+
+      $postMessage = new Typecho_Widget_Helper_Form_Element_Text('postMessage', NULL, NULL, _t('文章末尾信息'), _t('该信息将会在文章末尾显示（可标明版权等）'));
+        $form->addInput($postMessage);
     // $this->options->smoothScroll
     $smoothScroll = new Typecho_Widget_Helper_Form_Element_Select('smoothScroll', [
     false => '关闭',
@@ -197,7 +200,7 @@ function themeConfig($form) {
     $lazyLoad = new Typecho_Widget_Helper_Form_Element_Select('lazyLoad', [
         false => '关闭',
         true => '开启'
-        ], '', _t('LazyLoad'), _t('开启图片懒加载后，站点内的图片都会使用懒加载加载。不影响 SEO。'));
+        ], '', _t('LazyLoad'), _t('开启图片懒加载后，站点内的图片都会使用懒加载加载。该设置不影响 SEO。'));
         $form->addInput($lazyLoad);
         
      // $this->options->pangu
@@ -208,7 +211,12 @@ function themeConfig($form) {
         $form->addInput($pangu);
     
 
-
+      // $this->options->senweather
+     $senweather = new Typecho_Widget_Helper_Form_Element_Select('senweather', [
+      false => '关闭',
+      true => '开启'
+      ], '', _t('SenWeather 插件适配'), _t('对 SenWeather 天气插件进行适配。插件详情请见：https://gitee.com/get-fan/SenWeather'));
+      $form->addInput($senweather);
       
       
 

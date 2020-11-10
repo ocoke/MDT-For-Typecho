@@ -39,7 +39,7 @@
     
 <?php endif; ?>
 
-<script src="<?php $this->options->themeUrl('assets/js/vue.min.js'); ?>"></script>
+
 
 
 <script src="<?php $this->options->themeUrl('assets/js/darkmode.js'); ?>"></script>
