@@ -209,14 +209,19 @@ function themeConfig($form) {
         true => '开启'
         ], '', _t('中英文分割'), _t('使用 Pangu.php 对页面内的中英文，中文数字之间添加空格保证美观。'));
         $form->addInput($pangu);
-    
 
-      // $this->options->senweather
-     $senweather = new Typecho_Widget_Helper_Form_Element_Select('senweather', [
-      false => '关闭',
-      true => '开启'
-      ], '', _t('SenWeather 插件适配'), _t('对 SenWeather 天气插件进行适配。插件详情请见：https://gitee.com/get-fan/SenWeather'));
-      $form->addInput($senweather);
+        // $this->options->comment
+     $comment = new Typecho_Widget_Helper_Form_Element_Select('comment', [
+      "default" => 'Typecho 原生评论',
+      "valine" => 'Valine 评论'
+      ], '', _t('<hr/><h2>评论设置</h2>评论设置'), _t('评论设置，支持原生评论与 Valine 评论。'));
+      $form->addInput($comment);
+
+      $valineID = new Typecho_Widget_Helper_Form_Element_Text('valineID', NULL, NULL, _t('Valine - LeanCloud AppID'), _t('LeanCloud AppID（如选择 Valine 评论则必填）'));
+      $form->addInput($valineID);
+
+      $valineKey = new Typecho_Widget_Helper_Form_Element_Text('valineKey', NULL, NULL, _t('Valine - LeanCloud AppKey'), _t('LeanCloud AppKey（如选择 Valine 评论则必填）'));
+      $form->addInput($valineKey);
       
       
 

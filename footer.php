@@ -44,9 +44,24 @@
 
 <script src="<?php $this->options->themeUrl('assets/js/darkmode.js'); ?>"></script>
 
+<?php if($this->options->comment == "valine"): ?>
+<script src="<?php $this->options->themeUrl('assets/js/valine.min.js'); ?>"></script>
+<?php endif; ?>
+
 <?php outputEnd($this->options->pangu, $this->options->lazyLoad); ?>
 
 <?php $this->footer(); ?>
+
+<?php if($this->options->comment == "valine"): ?>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '<?php echo $this->options->valineID; ?>',
+        appKey: '<?php echo $this->options->valineKey; ?>',
+    })
+</script>
+<?php endif; ?>
+
 
 <?php if ($this->options->customJS): ?>
     <script>

@@ -76,7 +76,13 @@ echo '<div class="mdui-appbar appbar"  id="appbar"> ';
         <div class="mdui-toolbar-spacer"></div>
 
         <!-- SenWeater -->
-        
+
+          
+
+            <div id="SenAnchor"></div>
+
+
+
         <!-- icon:brightness_high -->
         <span class="mdui-btn mdui-btn-icon" id="dark_toggle_btn" onclick='toggleDark();'><i class="mdui-icon material-icons" id="dark_toggle_icon">&#xe1ac;</i></span>
         <!-- icon:rss_feed -->
