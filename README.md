@@ -6,7 +6,7 @@
 <br/>
 <img src="https://badgen.net/github/stars/oCoke/MDT-For-Typecho" alt="GitHub Star">
 <img src="https://badgen.net/github/forks/oCoke/MDT-For-Typecho" alt="GitHub Fork">
-<img src="https://badgen.net/github/last-commit/oCoke/MDT-For-Typecho" alt="GitHub Commit">
+<img src="https://badgen.net/github/last-commit/oCoke/MDT-For-Typecho/dev" alt="GitHub Commit">
 <img src="https://badgen.net/github/release/oCoke/MDT-For-Typecho" alt="GitHub Release">
 <img src="https://badgen.net/badge/For/Typecho/red" alt="For Typecho">
 <img src="https://badgen.net/badge/License/SATA/blue" alt="SATA">
