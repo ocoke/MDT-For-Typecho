@@ -214,7 +214,7 @@ function themeConfig($form) {
      $comment = new Typecho_Widget_Helper_Form_Element_Select('comment', [
       "default" => 'Typecho 原生评论',
       "valine" => 'Valine 评论'
-      ], '', _t('<hr/><h2>评论设置</h2>评论设置'), _t('评论设置，支持原生评论与 Valine 评论。'));
+      ], '', _t('<hr/><h2>评论设置</h2>评论设置'), _t('评论设置，支持原生评论与 Valine 评论。<br/>如果选择 Valine ，请<strong>保证每个文章页路径的唯一性</strong>，永久链接不应该为 URL 后带参数。错误示例：https://site.url/?id=[文章 CID]'));
       $form->addInput($comment);
 
       $valineID = new Typecho_Widget_Helper_Form_Element_Text('valineID', NULL, NULL, _t('Valine - LeanCloud AppID'), _t('LeanCloud AppID（如选择 Valine 评论则必填）'));
@@ -223,7 +223,14 @@ function themeConfig($form) {
       $valineKey = new Typecho_Widget_Helper_Form_Element_Text('valineKey', NULL, NULL, _t('Valine - LeanCloud AppKey'), _t('LeanCloud AppKey（如选择 Valine 评论则必填）'));
       $form->addInput($valineKey);
       
+      $valineHolder = new Typecho_Widget_Helper_Form_Element_Text('valineHolder', NULL, NULL, _t('Valine - 评论框占位提示符'), _t('Valine 评论框的占位提示符（选填）'));
+      $form->addInput($valineHolder);
       
+      $valineBiliBili = new Typecho_Widget_Helper_Form_Element_Select('valineBiliBili', [
+        true => '开启',
+        false => '关闭'
+        ], '', _t('Valine - 哔哩哔哩表情'), _t('Valine 评论使用哔哩哔哩表情。如关闭，则使用微博表情。'));
+        $form->addInput($valineBiliBili);
 
 
 

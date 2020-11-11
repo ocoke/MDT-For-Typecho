@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php if($this->options->comment == "valine"): ?>
-  <div id="vcomments"></div>
+  <div id="vcomments"><div class="mdui-spinner mdui-spinner-colorful"></div></div>
 <?php else: ?>
   
   <?php function threadedComments($comments, $options) {

@@ -78,7 +78,7 @@ git clone https://github.com/oCoke/MDT-For-Typecho.git
 
 ### 协议
 
-本主题基于 [SATA](https://github.com/oCoke/MDT-For-Typecho/blob/master/LICENSE.txt) 协议开源。
+本主题基于 [SATA](https://github.com/oCoke/MDT-For-Typecho/blob/master/LICENSE) 协议开源。
 
 根据协议，使用前你需要给这个项目点一个 **Star**，使用或转发时**请保留版权信息**，禁止倒卖。若需二次开发后发布，请先联系我。
 

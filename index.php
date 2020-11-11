@@ -21,19 +21,23 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <?php while ($this->next()): ?>
   <div class="mdui-card mdui-hoverable mdui-m-y-3">
     <div class="mdui-card-primary">
-      <div class="mdui-card-primary-title"><a class="mdui-text-color-theme-accent" href="<?php $this->permalink(); ?>"><?php $this->title(); ?></a></div>
+      <div class="mdui-card-primary-title"><a class="mdui-text-color-theme-accent title-link" href="<?php $this->permalink(); ?>"><?php $this->title(); ?></a></div>
       <div class="mdui-card-primary-subtitle mdui-text-color-theme-text">
         <?php $this->date(); ?>
           <span>&nbsp;|&nbsp;</span><i class="mdui-icon material-icons">&#xe853;</i>&nbsp;<a class="mdui-text-color-theme-accent" href="<?php $this->author->permalink(); ?>" ><?php $this->author(); ?></a>
 
+<span>&nbsp;|&nbsp;</span><i class="mdui-icon material-icons">&#xe866;</i>&nbsp;<?php $this->category(' , '); ?>
+
     
-          <span>&nbsp;|&nbsp;</span><i class="mdui-icon material-icons">&#xe866;</i>&nbsp;<?php $this->category(' , '); ?>
 
       </div>
     </div>
     
     <!-- 文章简介 -->
     <div class="mdui-card-content mdui-typo">
+
+
+
     <?php if($this->fields->excerpt && $this->fields->excerpt!='') {
         // 输出文章简介
 		    echo $this->fields->excerpt;
@@ -42,6 +46,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 				echo $this->excerpt(130);
 		}
 		?>
+
+
+
     
     </div>
     <div class="mdui-card-actions">

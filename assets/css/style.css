@@ -243,6 +243,9 @@ center{
 .post-content,.post-meta,#comments{
     margin: 3%!important;
 }
+#vcomments{
+    margin: 4%!important;
+}
 .post-content p{
     font-size: 16px;
 }
