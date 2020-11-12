@@ -1,8 +1,8 @@
 # MDT-For-Typecho
 
 <p align="center">
-<img src='https://gitee.com/heyos/mdt-for-typecho/badge/star.svg?theme=white' alt='Gitee Star'></img>
-<img src='https://gitee.com/heyos/mdt-for-typecho/badge/fork.svg?theme=white' alt='Gitee Fork'></img>
+<img src='https://gitee.com/heyos/mdt-for-typecho/badge/star.svg?theme=white' alt='Gitee Star'>
+<img src='https://gitee.com/heyos/mdt-for-typecho/badge/fork.svg?theme=white' alt='Gitee Fork'>
 <br/>
 <img src="https://badgen.net/github/stars/oCoke/MDT-For-Typecho" alt="GitHub Star">
 <img src="https://badgen.net/github/forks/oCoke/MDT-For-Typecho" alt="GitHub Fork">
