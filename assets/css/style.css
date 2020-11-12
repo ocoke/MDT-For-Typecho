@@ -261,3 +261,29 @@ center{
     width: auto!important;
     height: auto!important;
 }
+
+/* 文章卡片（https://flyhigher.top 大佬） */
+.postDiv{
+    margin: 15px;
+    width: 100%;
+    max-width: 900px!important;
+
+}
+p.ct1-p{
+    line-height: 25px;
+    margin-top: 10px;
+    padding: 0 10px;
+    font-size: 17px;
+    opacity: .7;
+}
+.info-icon {
+    font-size: 14px;
+}
+.info{
+    line-height: 36px;
+    opacity: .4;
+}
+.coun-read {
+    line-height: 36px;
+    float: right;
+}

@@ -189,6 +189,15 @@ function themeConfig($form) {
 
       $postMessage = new Typecho_Widget_Helper_Form_Element_Text('postMessage', NULL, NULL, _t('文章末尾信息'), _t('该信息将会在文章末尾显示（可标明版权等）'));
         $form->addInput($postMessage);
+        
+
+
+      $postIndexImage = new Typecho_Widget_Helper_Form_Element_Text(
+        'postIndexImage',NULL,'https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/www.todaybing.com.1605173678..1080P.jpg',
+        _t('文章默认预览图'),
+        _t('文章默认预览图，将在未设置单独预览图片时展示。')
+      );
+          $form->addInput($postIndexImage);
     // $this->options->smoothScroll
     $smoothScroll = new Typecho_Widget_Helper_Form_Element_Select('smoothScroll', [
     false => '关闭',
@@ -271,6 +280,8 @@ function themeFields(Typecho_Widget_Helper_Layout $layout) {
     $layout->addItem($excerpt);
   $postImage = new Typecho_Widget_Helper_Form_Element_Text('postImage', NULL, NULL,_t('文章 Banner 图片'), _t('文章 Banner 图片链接，不输入则与默认 Banner 图保持一致。'));
     $layout->addItem($postImage);
+  $indexImage = new Typecho_Widget_Helper_Form_Element_Text('indexImage', NULL, NULL,_t('文章列表图片'), _t('文章列表图片链接'));
+    $layout->addItem($indexImage);
 }
 
 
