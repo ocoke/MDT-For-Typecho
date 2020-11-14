@@ -99,7 +99,7 @@ npm init && npm i mdt-for-typecho --save
 
 ### 开源项目
 
-- [MDUI](https://www.mdui.org)
+- [zdhxiong/mdui[(https://github.com/zdhxiong/mdui)
 - [aFarkas/lazysizes](https://github.com/aFarkas/lazysizes)
 - [linclancey/pangu.php](https://github.com/linclancey/pangu.php)
 - [gblazex/smoothscroll-for-websites](https://github.com/gblazex/smoothscroll-for-websites)
