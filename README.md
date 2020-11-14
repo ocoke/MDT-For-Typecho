@@ -107,7 +107,8 @@ npm init && npm i mdt-for-typecho --save
 
 ### 参考
 
-[BigCoke233/miracles](https://github.com/BigCoke233/miracles) | [EAimTY/materiality-typecho-theme](https://github.com/EAimTY/materiality-typecho-theme)
+- [BigCoke233/miracles](https://github.com/BigCoke233/miracles) 
+- [EAimTY/materiality-typecho-theme](https://github.com/EAimTY/materiality-typecho-theme)
 
 ### 说明
 
