@@ -62,6 +62,14 @@
 git clone https://github.com/oCoke/MDT-For-Typecho.git
 ```
 
+OR:
+
+```bash
+npm init && npm i mdt-for-typecho --save
+```
+
+> 使用 NPM 安装的用户文件在 `node_module/mdt-for-typecho` 中。
+
 > 非常不推荐使用开发版，因为可能有不确定的不稳定因素，并且不一定有有利改动。<br>如果你使用开发版出现任何问题，欢迎通过 [Issues](https://github.com/oCoke/MDT-For-Typecho/issues) 反馈。
 
 ---
@@ -92,14 +100,14 @@ git clone https://github.com/oCoke/MDT-For-Typecho.git
 ### 开源项目
 
 - [MDUI](https://www.mdui.org)
-- [Lazysizes](https://github.com/aFarkas/lazysizes)
-- [Pangu.php](https://github.com/linclancey/pangu.php)
-- [Smoothscroll-For-Websites](https://github.com/gblazex/smoothscroll-for-websites)
-- [Prism.js](https://github.com/PrismJS/prism/)
+- [aFarkas/lazysizes](https://github.com/aFarkas/lazysizes)
+- [linclancey/pangu.php](https://github.com/linclancey/pangu.php)
+- [gblazex/smoothscroll-for-websites](https://github.com/gblazex/smoothscroll-for-websites)
+- [PrismJS/prism](https://github.com/PrismJS/prism)
 
 ### 参考
 
-[Miracles](https://github.com/BigCoke233/miracles/) | [Materiality](https://github.com/EAimTY/materiality-typecho-theme)
+[BigCoke233/miracles](https://github.com/BigCoke233/miracles) | [EAimTY/materiality-typecho-theme](https://github.com/EAimTY/materiality-typecho-theme)
 
 ### 说明
 
