@@ -135,7 +135,7 @@ center{
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 50.2%
+	height: 60.2%
 }
 
 .theFirstPageBackGround {
@@ -148,7 +148,7 @@ center{
 
 .theFirstPageSay {
 	z-index: 1;
-	height: 50.2%
+	height: 60.2%
 }
 
 #theFirstPageSayContent {
@@ -178,7 +178,7 @@ center{
 }
 .main{
     position: absolute;
-    top: 50.2%;
+    top: 60.2%;
     z-index: 2;
     width: 100%;
     left: 0;
@@ -266,7 +266,7 @@ center{
 .postDiv{
     margin: 15px;
     width: 100%;
-    max-width: 900px!important;
+    max-width: 750px!important;
 
 }
 p.ct1-p{

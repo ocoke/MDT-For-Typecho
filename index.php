@@ -45,13 +45,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 		</a>
 	</div>
 	<div class="mdui-card-actions">
-		<p class="ct1-p mdui-text-color-black">
+		<p class="ct1-p mdui-typo">
     <?php if($this->fields->excerpt && $this->fields->excerpt!='') {
         // 输出文章简介
 		    echo $this->fields->excerpt;
 		}else{
         // 未设置文章简介则默认截取前 130 字
-				echo $this->excerpt(130)."...";
+				echo $this->excerpt(130);
     }
     ?>
     </p>

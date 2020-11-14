@@ -155,7 +155,9 @@ function themeConfig($form) {
       'yellow' => 'Yellow',
       'amber' => 'Amber',
       'orange' => 'Orange',
-      'deep-orange' => 'Deep Orange'
+      'deep-orange' => 'Deep Orange',
+
+      'transparent' => '透明',
       ], '', _t('<h2>基础设置</h2>站点主题色'), _t('文档：https://heyos.gitee.io/mdt-docs/#/start/color'));
       $form->addInput($primaryColor);
       
