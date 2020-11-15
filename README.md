@@ -16,7 +16,7 @@
 
 简洁，专注阅读的 Typecho 博客主题。
 
-最新版本：`Beta-V0.3`。
+最新版本：`Beta-V0.4`。
 
 版本更新历史请见：[CHANGELOG.md](https://github.com/oCoke/MDT-For-Typecho/blob/master/CHANGELOG.md)
 
