@@ -27,7 +27,7 @@
     <link rel="icon" href="<?php $this->options->themeUrl('assets/img/icon.png'); ?>">
 
     <!-- 其他 HTML 头部信息 -->
-    <?php if ($this->is('post')) : ?>
+    <?php if ($this->is('post') || $this->is('page')) : ?>
       <?php echo '<meta name="description" content="'.$this->fields->excerpt.'" />'; ?>
       <?php $this->header('description='); ?>
     <?php else: ?>
@@ -35,7 +35,7 @@
 
     <?php endif; ?>
     
-    <?php include 'config.php' ;?>
+    
 
     <?php if ($this->options->customCSS): ?>
       <style>
@@ -51,18 +51,57 @@
 <!-- 判断站点主题色，强调色 -->
 <?php 
 
-echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $this->options->primaryColor." mdui-theme-accent-". $this->options->accentColor. " ".$this->options->autoDark . " line-numbers' >";
+$mduiPrimary = $this->options->primaryColor;
+$mduiAccent = $this->options->accentColor;
+
+
+
+echo "<body class='mdui-theme-primary-". $mduiPrimary." mdui-theme-accent-". $mduiAccent."  line-numbers' >";
 
 ?>
-<!-- Check For JavaScript -->
-<noscript>
-	<div class="alert-js">
-		<p>啊哦，<code class="code-js"> JavaScript </code>似乎无法正常使用。请尝试打开<code class="code-js"> JavaScript </code>以获得最佳体验！</p>
-	</div>
-</noscript>
+<div id="menu-body">
 
+
+<!-- AppBar -->
+<?php
+echo '<div class="mdui-appbar appbar"  id="appbar"> ';
+?>
+<!-- mdui-appbar-fixed -->
+    <div class="mdui-toolbar mdui-color-theme">
+        <!-- 菜单 -->
+        <!-- icon:menu -->
+        <a href="javascript:;" id="toggle" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
+        <!-- 站点标题 -->
+        <a href="<?php $this->options->siteUrl(); ?>" class="mdui-typo-headline"><?php $this->options->title() ?></a>
+        <div class="mdui-toolbar-spacer"></div>
+
+        <!-- SenWeater -->
+
+          
+
+            <div id="SenAnchor"></div>
+
+
+
+        <!-- icon:brightness_high -->
+        <span class="mdui-btn mdui-btn-icon" id="dark_toggle_btn" onclick='toggleDark();'><i class="mdui-icon material-icons" id="dark_toggle_icon">&#xe1ac;</i></span>
+        <!-- icon:rss_feed -->
+        
+        <button id="open-rss-menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe0e5;</i></button>
+        <ul class="mdui-menu" id="rss-menu">
+          <li class="mdui-menu-item">
+            <a href="<?php $this->options->feedUrl(); ?>" class="mdui-ripple">文章 RSS</a>
+          </li>
+          <li class="mdui-menu-item">
+            <a href="<?php $this->options->commentsFeedUrl(); ?>" class="mdui-ripple">评论 RSS</a>
+          </li>
+        </ul>
+        
+    </div>
+</div>
+</div>
 <!-- SideBar -->
-<div class="mdui-drawer" id="drawer"> <!-- 如果需要默认隐藏，需要添加 class "mdui-drawer-close" -->
+<div class="mdui-drawer mdui-drawer-close mdui-drawer-full-height"  id="drawer"> 
 
 <div class="mdui-list" mdui-collapse="{accordion: true}">
           <form class="mdui-p-t-0 mdui-m-x-2 mdui-textfield mdui-textfield-floating-label" method="post">
@@ -89,39 +128,83 @@ echo "<body class='mdui-drawer-body-left mdui-theme-primary-". $this->options->p
 </div>
 </div>
 
+<?php 
+
+if ($this->is('post') || $this->is('page')) {
+  // 如果这是文章或单独的页面
+  if(!$this->fields->postImage){
+    // 如果没有设置单独的图片
+    $postBannerimg = $this->options->bannerImage;
+  }else{
+    // 有设置单独的图片
+    $postBannerimg = $this->fields->postImage;
+  }
+  // 输出 CSS
+  echo "<style>.bannerImage{background-image: url(".$postBannerimg."); opacity: 1 !important; transition: opacity 0s ease 0s !important;}</style>";
+}else{
+  // 不是文章或图片
+  // 输出 CSS
+echo "<style>.bannerImage{background-image: url(".$this->options->bannerImage."); opacity: 1 !important; transition: opacity 0s ease 0s !important;}</style>";
+}
+?>
+
+<div class="theFirstPage bannerImage"></div>
+
+<div id="banner" class="theFirstPageSay mdui-valign mdui-typo mdui-text-color-white-text">
+ <h1 class="mdui-center"><?php 
+ // 如果标题有内容
+ if($this->archiveTitle(array(
+  'category'  =>  _t('分类「%s」下的文章'),
+  'search'    =>  _t('包含关键字「%s」的文章'),
+  'tag'       =>  _t('标签「%s」下的文章'),
+  'author'    =>  _t('作者「%s」发布的文章')
+), '') ){
+  // 直接输出当前标题
+  $this->archiveTitle(array(
+  'category'  =>  _t('分类「%s」下的文章'),
+  'search'    =>  _t('包含关键字「%s」的文章'),
+  'tag'       =>  _t('标签「%s」下的文章'),
+  'author'    =>  _t('作者「%s」发布的文章')
+), ''); }else{
+
+  // 标题无内容
+
+  if($this->is('index')){
+    // 且是在首页
+    // 输出 Slogan
+    echo $this->options->pageSlogan;
+  }
+} ?></h1>
+ <br/>
+
+
+<div>
 
 
 
 
-<div id="menu-body">
 
-
-<!-- AppBar -->
-<div class="mdui-appbar" id="appbar">
-    <div class="mdui-toolbar mdui-color-theme">
-        <!-- 菜单 -->
-        <!-- icon:menu -->
-        <a href="javascript:;" id="toggle" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe5d2;</i></a>
-        <!-- 站点标题 -->
-        <a href="<?php $this->options->siteUrl(); ?>" class="mdui-typo-headline"><?php $this->options->title() ?></a>
-        <div class="mdui-toolbar-spacer"></div>
-        <!-- icon:brightness_high -->
-        <span class="mdui-btn mdui-btn-icon" id="dark_toggle_btn" onclick='toggleDark();'><i class="mdui-icon material-icons" id="dark_toggle_icon">&#xe1ac;</i></span>
-        <!-- icon:rss_feed -->
-        
-        <button id="open-rss-menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe0e5;</i></button>
-        <ul class="mdui-menu" id="rss-menu">
-          <li class="mdui-menu-item">
-            <a href="<?php $this->options->feedUrl(); ?>" class="mdui-ripple">文章 RSS</a>
-          </li>
-          <li class="mdui-menu-item">
-            <a href="<?php $this->options->commentsFeedUrl(); ?>" class="mdui-ripple">评论 RSS</a>
-          </li>
-        </ul>
-        
-    </div>
 </div>
+
 </div>
+
+</div>
+<div class="main">
+
+<!-- Check For JavaScript -->
+<noscript>
+	<div class="alert-js">
+		<p>啊哦，<code class="code-js"> JavaScript </code>似乎无法正常使用。请尝试打开<code class="code-js"> JavaScript </code>以获得最佳体验！</p>
+	</div>
+</noscript>
+
+
+
+
+
+
+
+
 
 
 <div id="body">

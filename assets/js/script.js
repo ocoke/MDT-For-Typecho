@@ -11,8 +11,10 @@ document.getElementById('open-rss-menu').addEventListener('click', function () {
 });
 
 
+
+
 // DRAWER
-var drawer = new mdui.Drawer('#drawer');
+var drawer = new mdui.Drawer('#drawer', { overlay: true });
 
 // 切换 (#toggle)
 document.getElementById('toggle').addEventListener('click', function () {

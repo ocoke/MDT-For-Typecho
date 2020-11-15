@@ -1,5 +1,9 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<?php function threadedComments($comments, $options) {
+<?php if($this->options->comment == "valine"): ?>
+  <div id="vcomments"><div class="mdui-spinner mdui-spinner-colorful"></div></div>
+<?php else: ?>
+  
+  <?php function threadedComments($comments, $options) {
   $commentClass = '';
   if ($comments->authorId) {
     if ($comments->authorId == $comments->ownerId) {
@@ -93,3 +97,4 @@
     </div>
   <?php endif; ?>
 </div>
+<?php endif; ?>

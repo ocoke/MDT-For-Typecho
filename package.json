@@ -1,0 +1,16 @@
+{
+    "name": "mdt-for-typecho",
+    "version": "0.4.1",
+    "description": "Concise Typecho blog theme.",
+    "main": "index.php",
+    "keywords": [
+        "hifun",
+        "ocoke",
+        "typecho",
+        "typecho-theme",
+        "mdui",
+        "mdt-for-typecho"
+    ],
+    "author": "oCoke",
+    "license": "SATA"
+}

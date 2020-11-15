@@ -155,7 +155,9 @@ function themeConfig($form) {
       'yellow' => 'Yellow',
       'amber' => 'Amber',
       'orange' => 'Orange',
-      'deep-orange' => 'Deep Orange'
+      'deep-orange' => 'Deep Orange',
+
+      'transparent' => '透明',
       ], '', _t('<h2>基础设置</h2>站点主题色'), _t('文档：https://heyos.gitee.io/mdt-docs/#/start/color'));
       $form->addInput($primaryColor);
       
@@ -181,37 +183,70 @@ function themeConfig($form) {
         ], '', _t('站点强调色'), _t('文档：https://heyos.gitee.io/mdt-docs/#/start/color'));
         $form->addInput($accentColor);
 
-
+      $pageSlogan = new Typecho_Widget_Helper_Form_Element_Text('pageSlogan', NULL, NULL, _t('首页 Banner 文字'), _t('该文字将会被输出在首页 Banner 上'));
+        $form->addInput($pageSlogan);
     
+      $bannerImage = new Typecho_Widget_Helper_Form_Element_Text('bannerImage', NULL, NULL, _t('Banner 图片'), _t('Banner 背景图片（文章需要另外设置）'));
+        $form->addInput($bannerImage);
 
+      $postMessage = new Typecho_Widget_Helper_Form_Element_Text('postMessage', NULL, NULL, _t('文章末尾信息'), _t('该信息将会在文章末尾显示（可标明版权等）'));
+        $form->addInput($postMessage);
+        
+
+
+      $postIndexImage = new Typecho_Widget_Helper_Form_Element_Text(
+        'postIndexImage',NULL,'https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/www.todaybing.com.1605173678..1080P.jpg',
+        _t('文章默认预览图'),
+        _t('文章默认预览图，将在未设置单独预览图片时展示。')
+      );
+          $form->addInput($postIndexImage);
     // $this->options->smoothScroll
     $smoothScroll = new Typecho_Widget_Helper_Form_Element_Select('smoothScroll', [
     false => '关闭',
     true => '开启'
-    ], '', _t('<h2>高级设置</h2>顺滑滚动'), _t('将改善页面滚动时的体验，但可能会造成页面滚动时轻微掉帧'));
+    ], '', _t('<hr/><h2>高级设置</h2>顺滑滚动'), _t('将改善页面滚动时的体验，但可能会造成页面滚动时轻微掉帧'));
     $form->addInput($smoothScroll);
 
      // $this->options->lazyLoad
     $lazyLoad = new Typecho_Widget_Helper_Form_Element_Select('lazyLoad', [
         false => '关闭',
         true => '开启'
-        ], '', _t('LazyLoad'), _t('图片懒加载'));
+        ], '', _t('LazyLoad'), _t('开启图片懒加载后，站点内的图片都会使用懒加载加载。该设置不影响 SEO。'));
         $form->addInput($lazyLoad);
         
      // $this->options->pangu
      $pangu = new Typecho_Widget_Helper_Form_Element_Select('pangu', [
         false => '关闭',
         true => '开启'
-        ], '', _t('中英文分割'), _t('(Pangu.js)'));
+        ], '', _t('中英文分割'), _t('使用 Pangu.php 对页面内的中英文，中文数字之间添加空格保证美观。'));
         $form->addInput($pangu);
-    // $this->options->autoDark
-    $autoDark = new Typecho_Widget_Helper_Form_Element_Select('autoDark', [
-      "" => '关闭',
-      "mdui-theme-layout-auto" => '开启（深色模式时将无法自主切换）'
-      ], '', _t('自动切换深色模式'), _t('将自动根据用户设备的模式切换深色模式（深色模式时将无法自主切换）'));
-      $form->addInput($autoDark);
 
-      $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', null, null, '<h2>开发者设置</h2>自定义 CSS', '在此处编辑 CSS 代码，它将会被应用至每一个页面。');
+        // $this->options->comment
+     $comment = new Typecho_Widget_Helper_Form_Element_Select('comment', [
+      "default" => 'Typecho 原生评论',
+      "valine" => 'Valine 评论'
+      ], '', _t('<hr/><h2>评论设置</h2>评论设置'), _t('评论设置，支持原生评论与 Valine 评论。<br/>如果选择 Valine ，请<strong>保证每个文章页路径的唯一性</strong>，永久链接不应该为 URL 后带参数。错误示例：https://site.url/?id=[文章 CID]'));
+      $form->addInput($comment);
+
+      $valineID = new Typecho_Widget_Helper_Form_Element_Text('valineID', NULL, NULL, _t('Valine - LeanCloud AppID'), _t('LeanCloud AppID（如选择 Valine 评论则必填）'));
+      $form->addInput($valineID);
+
+      $valineKey = new Typecho_Widget_Helper_Form_Element_Text('valineKey', NULL, NULL, _t('Valine - LeanCloud AppKey'), _t('LeanCloud AppKey（如选择 Valine 评论则必填）'));
+      $form->addInput($valineKey);
+      
+      $valineHolder = new Typecho_Widget_Helper_Form_Element_Text('valineHolder', NULL, NULL, _t('Valine - 评论框占位提示符'), _t('Valine 评论框的占位提示符（选填）'));
+      $form->addInput($valineHolder);
+      
+      $valineBiliBili = new Typecho_Widget_Helper_Form_Element_Select('valineBiliBili', [
+        true => '开启',
+        false => '关闭'
+        ], '', _t('Valine - 哔哩哔哩表情'), _t('Valine 评论使用哔哩哔哩表情。如关闭，则使用微博表情。'));
+        $form->addInput($valineBiliBili);
+
+
+
+
+      $customCSS = new Typecho_Widget_Helper_Form_Element_Textarea('customCSS', null, null, '<hr/><h2>开发者设置</h2>自定义 CSS', '在此处编辑 CSS 代码，它将会被应用至每一个页面。');
         $form->addInput($customCSS);
 
       $customJS = new Typecho_Widget_Helper_Form_Element_Textarea('customJS', null, null, '自定义 JavaScript', '在此处编辑 JS 代码，它将会被应用至每一个页面。');
@@ -242,8 +277,13 @@ function themeConfig($form) {
 // 文章摘要
 // $this->fields->excerpt;
 function themeFields(Typecho_Widget_Helper_Layout $layout) {
+  echo "<link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/oCoke/Assets@d46e5b3/mdt/settings.css'>";
 	$excerpt = new Typecho_Widget_Helper_Form_Element_Text('excerpt', NULL, NULL,_t('文章摘要'), _t('输入一段文本来自定义摘要，如果为空则自动提取文章前 130 字。'));
     $layout->addItem($excerpt);
+  $postImage = new Typecho_Widget_Helper_Form_Element_Text('postImage', NULL, NULL,_t('文章 Banner 图片'), _t('文章 Banner 图片链接，不输入则与默认 Banner 图保持一致。'));
+    $layout->addItem($postImage);
+  $indexImage = new Typecho_Widget_Helper_Form_Element_Text('indexImage', NULL, NULL,_t('文章列表图片'), _t('文章列表图片链接'));
+    $layout->addItem($indexImage);
 }
 
 

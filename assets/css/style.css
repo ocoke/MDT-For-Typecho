@@ -93,7 +93,7 @@
 
 
 a{
-    color: blue;
+    color:#448AFF;
 }
 
 center{
@@ -101,6 +101,189 @@ center{
 }
 
 #body{
-    margin: 5px;
-    padding: 5px;
+    margin: 2%;
+    padding:2%;
+}
+
+.footer{
+    margin: 3%;
+    padding: 2%;
+}
+
+.error-page{
+    text-align: center;
+}
+.search-404{
+    width: 30%;
+}
+
+.theFirstPage {
+	z-index: 1;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0!important;
+	transition: opacity .3s
+}
+
+.theFirstPage.mdx-bg-loaded {
+	opacity: 1!important
+}
+
+.theFirstPage,.theFirstPageBackGround {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 60.2%
+}
+
+.theFirstPageBackGround {
+	z-index: 1
+}
+
+.mdui-theme-layout-dark .PostTitleFillPageBackGround,.mdui-theme-layout-dark .theFirstPageBackGround {
+	background-color: #212121!important
+}
+
+.theFirstPageSay {
+	z-index: 1;
+	height: 60.2%
+}
+
+#theFirstPageSayContent {
+	padding: 0 30px
+}
+
+.theFirstPageSay,.theFirstPageSmall {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%
+}
+
+.theFirstPageSmall {
+	z-index: 1;
+	height: 270px
+}
+
+.appbar{
+    position: fixed;
+    z-index: 4;
+    right: 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    will-change: left,right;
+}
+.main{
+    position: absolute;
+    top: 60.2%;
+    z-index: 2;
+    width: 100%;
+    left: 0;
+
+}
+.custom-block .custom-block-title {
+    font-weight: 600;
+    margin-bottom: -.4rem
+}
+
+.custom-block.danger,.custom-block.tip,.custom-block.warning {
+    padding: .1rem 1.5rem;
+    border-left-width: .5rem;
+    border-left-style: solid;
+    margin: 1rem 0
+}
+
+
+
+.custom-block.warning {
+    background-color: rgba(255,229,100,.3);
+    border-color: #e7c000;
+    color: #6b5900
+}
+
+.custom-block.warning .custom-block-title {
+    color: #b29400
+}
+
+.custom-block.warning a {
+    color: #2c3e50
+}
+
+
+
+
+
+
+
+.custom-block.warning {
+    padding: .1rem 1.5rem;
+    border-left-width: .5rem;
+    border-left-style: solid;
+    margin: 1rem 0
+}
+
+
+.custom-block.warning {
+    background-color: rgba(255,229,100,.3);
+    border-color: #e7c000;
+    color: #6b5900
+}
+
+.custom-block.warning .custom-block-title {
+    color: #b29400
+}
+
+.custom-block.warning a {
+    color: #2c3e50
+}
+
+.post-content,.post-meta,#comments{
+    margin: 3%!important;
+}
+#vcomments{
+    margin: 4%!important;
+}
+.post-content p{
+    font-size: 16px;
+}
+.post-content h3{
+    font-size: 1.7em!important;
+}
+.post-content h4{
+    font-size: 1.6em!important;
+}
+
+
+#senweater{
+    width: auto!important;
+    height: auto!important;
+}
+
+/* 文章卡片（https://flyhigher.top 大佬） */
+.postDiv{
+    margin: 15px;
+    width: 100%;
+    max-width: 750px!important;
+
+}
+p.ct1-p{
+    line-height: 25px;
+    margin-top: 10px;
+    padding: 0 10px;
+    font-size: 17px;
+    opacity: .7;
+}
+.info-icon {
+    font-size: 14px;
+}
+.info{
+    line-height: 36px;
+    opacity: .4;
+}
+.coun-read {
+    line-height: 36px;
+    float: right;
 }

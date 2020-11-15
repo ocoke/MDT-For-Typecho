@@ -1,12 +1,12 @@
 # MDT-For-Typecho
 
 <p align="center">
-<a href='https://gitee.com/heyos/mdt-for-typecho/stargazers'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/star.svg?theme=white' alt='Gitee Star'></img></a>
-<a href='https://gitee.com/heyos/mdt-for-typecho/members'><img src='https://gitee.com/heyos/mdt-for-typecho/badge/fork.svg?theme=white' alt='Gitee Fork'></img></a>
+<img src='https://gitee.com/heyos/mdt-for-typecho/badge/star.svg?theme=white' alt='Gitee Star'>
+<img src='https://gitee.com/heyos/mdt-for-typecho/badge/fork.svg?theme=white' alt='Gitee Fork'>
 <br/>
 <img src="https://badgen.net/github/stars/oCoke/MDT-For-Typecho" alt="GitHub Star">
 <img src="https://badgen.net/github/forks/oCoke/MDT-For-Typecho" alt="GitHub Fork">
-<img src="https://badgen.net/github/last-commit/oCoke/MDT-For-Typecho" alt="GitHub Commit">
+<img src="https://badgen.net/github/last-commit/oCoke/MDT-For-Typecho/dev" alt="GitHub Commit">
 <img src="https://badgen.net/github/release/oCoke/MDT-For-Typecho" alt="GitHub Release">
 <img src="https://badgen.net/badge/For/Typecho/red" alt="For Typecho">
 <img src="https://badgen.net/badge/License/SATA/blue" alt="SATA">
@@ -16,13 +16,13 @@
 
 简洁，专注阅读的 Typecho 博客主题。
 
-最新版本：`Beta-V0.3`。
+最新版本：`Beta-V0.4`。
 
 版本更新历史请见：[CHANGELOG.md](https://github.com/oCoke/MDT-For-Typecho/blob/master/CHANGELOG.md)
 
 文档：[https://heyos.gitee.io/mdt-docs](https://heyos.gitee.io/mdt-docs)
 
-预览站：[https://blog.hifun.site](https://blog.hifun.site)
+预览站：[https://mdt.hifun.site](https://mdt.hifun.site)
 
 ## 特性
 
@@ -39,6 +39,7 @@
 - 不错的兼容性
 - 响应式 / 自适应设计
 - 开发者设置
+- 大多数浏览器的**阅读器支持**
 
 
 
@@ -61,6 +62,14 @@
 git clone https://github.com/oCoke/MDT-For-Typecho.git
 ```
 
+OR:
+
+```bash
+npm init && npm i mdt-for-typecho --save
+```
+
+> 使用 NPM 安装的用户文件在 `node_module/mdt-for-typecho` 中。
+
 > 非常不推荐使用开发版，因为可能有不确定的不稳定因素，并且不一定有有利改动。<br>如果你使用开发版出现任何问题，欢迎通过 [Issues](https://github.com/oCoke/MDT-For-Typecho/issues) 反馈。
 
 ---
@@ -77,7 +86,7 @@ git clone https://github.com/oCoke/MDT-For-Typecho.git
 
 ### 协议
 
-本主题基于 [SATA](https://github.com/oCoke/MDT-For-Typecho/blob/master/LICENSE.txt) 协议开源。
+本主题基于 [SATA](https://github.com/oCoke/MDT-For-Typecho/blob/master/LICENSE) 协议开源。
 
 根据协议，使用前你需要给这个项目点一个 **Star**，使用或转发时**请保留版权信息**，禁止倒卖。若需二次开发后发布，请先联系我。
 
@@ -90,15 +99,16 @@ git clone https://github.com/oCoke/MDT-For-Typecho.git
 
 ### 开源项目
 
-- [MDUI](https://www.mdui.org)
-- [Lazysizes](https://github.com/aFarkas/lazysizes)
-- [Pangu.php](https://github.com/linclancey/pangu.php)
-- [Smoothscroll-For-Websites](https://github.com/gblazex/smoothscroll-for-websites)
-- [Prism.js](https://github.com/PrismJS/prism/)
+- [zdhxiong/mdui](https://github.com/zdhxiong/mdui)
+- [aFarkas/lazysizes](https://github.com/aFarkas/lazysizes)
+- [linclancey/pangu.php](https://github.com/linclancey/pangu.php)
+- [gblazex/smoothscroll-for-websites](https://github.com/gblazex/smoothscroll-for-websites)
+- [PrismJS/prism](https://github.com/PrismJS/prism)
 
 ### 参考
 
-[Miracles](https://github.com/BigCoke233/miracles/) | [Materiality](https://github.com/EAimTY/materiality-typecho-theme)
+- [BigCoke233/miracles](https://github.com/BigCoke233/miracles) 
+- [EAimTY/materiality-typecho-theme](https://github.com/EAimTY/materiality-typecho-theme)
 
 ### 说明
 
