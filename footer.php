@@ -2,7 +2,6 @@
 
 
     
-</div>
 
 <?php if ($this->options->customFootHTML): ?>
     <?php $this->options->customFootHTML() ?>
@@ -14,7 +13,7 @@
     <p>Powered by <a class="mdui-text-color-theme-accent" href="http://www.typecho.org">Typecho</a></p>
     <p>Theme <a class="mdui-text-color-theme-accent" href="https://github.com/oCoke/MDT-For-Typecho">MDT</a> by <a class="mdui-text-color-theme-accent" href="https://github.com/oCoke">oCoke</a></p>
 </div><!-- end #footer -->
-
+</div><!-- end #main-->
 </div>
 </div><!-- end #body -->
 <!-- MDUI JS -->
@@ -39,7 +38,19 @@
     
 <?php endif; ?>
 
+<!-- RSS 目录 -->
+<?php if ($this->options->appBarRSS == true) : ?>
+<script>
+// RSS-MENU
 
+var rss = new mdui.Menu('#open-rss-menu', '#rss-menu');
+
+// method
+document.getElementById('open-rss-menu').addEventListener('click', function () {
+    rss.open();
+});
+</script>
+<?php endif; ?>
 
 
 <script src="<?php $this->options->themeUrl('assets/js/darkmode.js'); ?>"></script>

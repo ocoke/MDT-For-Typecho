@@ -1,14 +1,6 @@
 // Settings For MDUI 
 var $ = mdui.$;
 
-// RSS-MENU
-
-var rss = new mdui.Menu('#open-rss-menu', '#rss-menu');
-
-// method
-document.getElementById('open-rss-menu').addEventListener('click', function () {
-    rss.open();
-});
 
 
 

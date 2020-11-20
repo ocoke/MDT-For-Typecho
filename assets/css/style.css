@@ -240,9 +240,7 @@ center{
     color: #2c3e50
 }
 
-.post-content,.post-meta,#comments{
-    margin: 3%!important;
-}
+
 #vcomments{
     margin: 4%!important;
 }
@@ -286,4 +284,42 @@ p.ct1-p{
 .coun-read {
     line-height: 36px;
     float: right;
+}
+/* 阅读体验优化 */
+/* .post-content,.post-meta,#comments{
+    margin: 3%!important;
+} */
+
+@media (max-width: 1000px){
+.post-content,.post-meta,#comments,#footer {
+    margin-right: 0% !important;
+    margin-bottom: 1% !important;
+    margin-left: 0% !important;
+}}
+
+@media (max-width: 1500px){
+.post-content,.post-meta,#comments,#footer {
+    margin-right: 5% !important;
+    margin-bottom: 2% !important;
+    margin-left: 5% !important;
+}}
+
+@media (max-width: 2100px){
+.post-content,.post-meta,#comments,#footer {
+    margin-right: 10% !important;
+    margin-bottom: 2% !important;
+    margin-left: 10% !important;
+}}
+
+@media (max-width: 2500px){
+.post-content,.post-meta,#comments,#footer {
+    margin-right: 12% !important;
+    margin-bottom: 3% !important;
+    margin-left: 12% !important;
+}}
+
+.post-content,.post-meta,#comments,#footer {
+    margin-right: 12%;
+    margin-bottom: 3%;
+    margin-left: 12%;
 }

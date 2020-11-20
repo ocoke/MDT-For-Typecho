@@ -224,7 +224,7 @@ function themeConfig($form) {
       $appBarRSS = new Typecho_Widget_Helper_Form_Element_Select('appBarRSS', [
           true => '开启',
           false => '关闭'
-          ], '', _t('中英文分割'), _t('导航栏 RSS'));
+          ], '', _t('导航栏 RSS'), _t('选择『关闭』将不展示 RSS 按键'));
           $form->addInput($appBarRSS);
 
         // $this->options->comment

@@ -70,7 +70,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 		<span class="mdui-btn"><?php $this->pageLink('<i class="mdui-icon material-icons">&#xe409;</i>','next'); ?></span>
 </div>
     
-</div><!-- end #main-->
+
 
 
 <?php $this->need('footer.php'); ?>
