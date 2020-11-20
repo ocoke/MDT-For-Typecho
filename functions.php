@@ -3,15 +3,15 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 // Pangu
 function pangu($text) {
     $cjk = '' .
-           '\x{2e80}-\x{2eff}' .
-           '\x{2f00}-\x{2fdf}' .
-           '\x{3040}-\x{309f}' .
-           '\x{30a0}-\x{30ff}' .
-           '\x{3100}-\x{312f}' .
-           '\x{3200}-\x{32ff}' .
-           '\x{3400}-\x{4dbf}' .
-           '\x{4e00}-\x{9fff}' .
-           '\x{f900}-\x{faff}';
+          '\x{2e80}-\x{2eff}' .
+          '\x{2f00}-\x{2fdf}' .
+          '\x{3040}-\x{309f}' .
+          '\x{30a0}-\x{30ff}' .
+          '\x{3100}-\x{312f}' .
+          '\x{3200}-\x{32ff}' .
+          '\x{3400}-\x{4dbf}' .
+          '\x{4e00}-\x{9fff}' .
+          '\x{f900}-\x{faff}';
     $patterns = array(
       'cjk_quote' => array(
         '([' . $cjk . '])(["\'])',
@@ -220,6 +220,12 @@ function themeConfig($form) {
         true => '开启'
         ], '', _t('中英文分割'), _t('使用 Pangu.php 对页面内的中英文，中文数字之间添加空格保证美观。'));
         $form->addInput($pangu);
+
+      $appBarRSS = new Typecho_Widget_Helper_Form_Element_Select('appBarRSS', [
+          true => '开启',
+          false => '关闭'
+          ], '', _t('中英文分割'), _t('导航栏 RSS'));
+          $form->addInput($appBarRSS);
 
         // $this->options->comment
      $comment = new Typecho_Widget_Helper_Form_Element_Select('comment', [
