@@ -40,6 +40,7 @@
 
 <!-- RSS 目录 -->
 <?php if ($this->options->appBarRSS == true) : ?>
+    
 <script>
 // RSS-MENU
 
