@@ -4,7 +4,7 @@
  * 
  * @package MDT For Typecho 
  * @author oCoke
- * @version 0.4
+ * @version 0.5
  * @link https://github.com/oCoke/
  */
 
