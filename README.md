@@ -40,6 +40,8 @@
 - 响应式 / 自适应设计
 - 开发者设置
 - 大多数浏览器的**阅读器支持**
+- 文章目录树
+- 阅读优化
 
 
 
@@ -68,7 +70,7 @@ OR:
 npm init && npm i mdt-for-typecho --save
 ```
 
-> 使用 NPM 安装的用户文件在 `node_module/mdt-for-typecho` 中。
+> 如果使用 NPM 安装，主题文件在 `node_module/mdt-for-typecho` 中。
 
 > 非常不推荐使用开发版，因为可能有不确定的不稳定因素，并且不一定有有利改动。<br>如果你使用开发版出现任何问题，欢迎通过 [Issues](https://github.com/oCoke/MDT-For-Typecho/issues) 反馈。
 

@@ -290,7 +290,7 @@ function themeFields(Typecho_Widget_Helper_Layout $layout) {
       true => '开启',
       false => '关闭'
       ], '', _t('文章目录树'), _t('开启后将会在文章内容前插入目录树'));
-      $form->addInput($menuTree);
+      $layout->addItem($menuTree);
 }
 
 
