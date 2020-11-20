@@ -1,6 +1,6 @@
 {
     "name": "mdt-for-typecho",
-    "version": "0.4.1",
+    "version": "0.5.0",
     "description": "Concise Typecho blog theme.",
     "main": "index.php",
     "keywords": [

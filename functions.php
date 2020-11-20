@@ -1,17 +1,21 @@
 <?php
+
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
+require_once("libs/contents.php");
+
 // Pangu
 function pangu($text) {
     $cjk = '' .
-           '\x{2e80}-\x{2eff}' .
-           '\x{2f00}-\x{2fdf}' .
-           '\x{3040}-\x{309f}' .
-           '\x{30a0}-\x{30ff}' .
-           '\x{3100}-\x{312f}' .
-           '\x{3200}-\x{32ff}' .
-           '\x{3400}-\x{4dbf}' .
-           '\x{4e00}-\x{9fff}' .
-           '\x{f900}-\x{faff}';
+          '\x{2e80}-\x{2eff}' .
+          '\x{2f00}-\x{2fdf}' .
+          '\x{3040}-\x{309f}' .
+          '\x{30a0}-\x{30ff}' .
+          '\x{3100}-\x{312f}' .
+          '\x{3200}-\x{32ff}' .
+          '\x{3400}-\x{4dbf}' .
+          '\x{4e00}-\x{9fff}' .
+          '\x{f900}-\x{faff}';
     $patterns = array(
       'cjk_quote' => array(
         '([' . $cjk . '])(["\'])',
@@ -94,7 +98,7 @@ function outputStart() {
 }
 
 
-function outputEnd($pangu, $lazyLoad) {
+function outputEnd($pangu) {
     $output = ob_get_contents();
     ob_end_clean();
     if ($pangu) {
@@ -121,17 +125,7 @@ function outputEnd($pangu, $lazyLoad) {
         $output = implode('', $output);
       }
       
-    if ($lazyLoad) {
-        // 图片懒加载
-        $dom = new DOMDocument();
-        @$dom->loadHTML($output);
-        foreach ($dom->getElementsByTagName('img') as $node) {
-        $node->setAttribute("class", $node->getAttribute('class') . " lazyload mdui-shadow-3 mdui-center");
-        $node->setAttribute("data-src", $node->getAttribute('src'));
-        $node->setAttribute("src", "https://cdn.jsdelivr.net/gh/oCoke/Assets@b3d2cef/mdt/loading-2.gif" );
-    }
-    $output = $dom->saveHtml();
-    }
+
     echo $output;
 
 }
@@ -186,7 +180,14 @@ function themeConfig($form) {
       $pageSlogan = new Typecho_Widget_Helper_Form_Element_Text('pageSlogan', NULL, NULL, _t('首页 Banner 文字'), _t('该文字将会被输出在首页 Banner 上'));
         $form->addInput($pageSlogan);
     
-      $bannerImage = new Typecho_Widget_Helper_Form_Element_Text('bannerImage', NULL, NULL, _t('Banner 图片'), _t('Banner 背景图片（文章需要另外设置）'));
+
+
+        $bannerImage = new Typecho_Widget_Helper_Form_Element_Text(
+          'bannerImage',NULL,'https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/Xci879.jpg',
+          _t('Banner 图片'),
+          _t('Banner 背景图片（文章可另外设置）')
+        );
+
         $form->addInput($bannerImage);
 
       $postMessage = new Typecho_Widget_Helper_Form_Element_Text('postMessage', NULL, NULL, _t('文章末尾信息'), _t('该信息将会在文章末尾显示（可标明版权等）'));
@@ -220,6 +221,17 @@ function themeConfig($form) {
         true => '开启'
         ], '', _t('中英文分割'), _t('使用 Pangu.php 对页面内的中英文，中文数字之间添加空格保证美观。'));
         $form->addInput($pangu);
+
+      $appBarRSS = new Typecho_Widget_Helper_Form_Element_Select('appBarRSS', [
+          true => '开启',
+          false => '关闭'
+          ], '', _t('导航栏 RSS'), _t('选择『关闭』将不展示 RSS 按键'));
+          $form->addInput($appBarRSS);
+
+    
+
+      // ---
+
 
         // $this->options->comment
      $comment = new Typecho_Widget_Helper_Form_Element_Select('comment', [
@@ -257,17 +269,7 @@ function themeConfig($form) {
 
       $customFootHTML = new Typecho_Widget_Helper_Form_Element_Textarea('customFootHTML', null, null, '自定义页脚 HTML', '在此处编辑页脚 HTML 代码，它将会被应用至每一个页面的页脚。');
         $form->addInput($customFootHTML);
-    // $this->options->cdn
-    // $cdn = new Typecho_Widget_Helper_Form_Element_Select('cdn', [
-    //   'false' => '关闭',
-    //   'jsdelivr' => 'jsDelivr',
-    //   'unicloud' => 'UniCloud',
-    //   'true' => '自定义'
-    //   ], '', _t('静态资源 CDN 调用'), _t('使用 CDN 调用静态资源'));
-    //   $form->addInput($cdn);
-    // // $this->options->cdnAddress
-    // $cdnAddress = new Typecho_Widget_Helper_Form_Element_Text('cdnAddress', NULL, NULL, _t('自定义 CDN 链接'), _t('如您选择自定义 CDN 链接，请填写此项。目录下的内容应有 assets 目录下的内容。填写示例：https://cdn.url/assets/'));
-    //   $form->addInput($cdnAddress);
+    
 }
 
 
@@ -284,35 +286,11 @@ function themeFields(Typecho_Widget_Helper_Layout $layout) {
     $layout->addItem($postImage);
   $indexImage = new Typecho_Widget_Helper_Form_Element_Text('indexImage', NULL, NULL,_t('文章列表图片'), _t('文章列表图片链接'));
     $layout->addItem($indexImage);
+  $menuTree = new Typecho_Widget_Helper_Form_Element_Select('menuTree', [
+      true => '开启',
+      false => '关闭'
+      ], '', _t('文章目录树'), _t('开启后将会在文章内容前插入目录树'));
+      $layout->addItem($menuTree);
 }
 
 
-// if ($this->options->cdn == "false"){
-//   // 本地链接
-//   $cdnURLcss = $this->options->themeUrl('assets/css/');
-//   $cdnURLjs = $this->options->themeUrl('assets/js/');
-//   $cdnURLfont = $this->options->themeUrl('assets/fonts/');
-//   $cdnURLicon = $this->options->themeUrl('assets/icons/');
-//   $cdnURLimg = $this->options->themeUrl('assets/img/');
-// }elseif ($this->options->cdn == "jsdelivr"){
-//   // jsDelivr
-//   $cdnURLcss = $this->options->themeUrl('assets/css/');
-//   $cdnURLjs = $this->options->themeUrl('assets/js/');
-//   $cdnURLfont = $this->options->themeUrl('assets/fonts/');
-//   $cdnURLicon = $this->options->themeUrl('assets/icons/');
-//   $cdnURLimg = $this->options->themeUrl('assets/img/');
-// }elseif ($this->options->cdn == "unicloud"){
-//   // UniCloud
-//   $cdnURLcss = $this->options->themeUrl('assets/css/');
-//   $cdnURLjs = $this->options->themeUrl('assets/js/');
-//   $cdnURLfont = $this->options->themeUrl('assets/fonts/');
-//   $cdnURLicon = $this->options->themeUrl('assets/icons/');
-//   $cdnURLimg = $this->options->themeUrl('assets/img/');
-// }elseif ($this->options->cdn == "true"){
-//   // 自定义
-//   $cdnURLcss = $this->options->cdnAddress.'css/';
-//   $cdnURLjs = $this->options->cdnAddress.'js/';
-//   $cdnURLfont = $this->options->cdnAddress.'fonts/';
-//   $cdnURLicon = $this->options->cdnAddress.'icons/';
-//   $cdnURLimg = $this->options->cdnAddress.'img/';
-// }

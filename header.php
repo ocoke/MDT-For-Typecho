@@ -85,6 +85,8 @@ echo '<div class="mdui-appbar appbar"  id="appbar"> ';
 
         <!-- icon:brightness_high -->
         <span class="mdui-btn mdui-btn-icon" id="dark_toggle_btn" onclick='toggleDark();'><i class="mdui-icon material-icons" id="dark_toggle_icon">&#xe1ac;</i></span>
+        <?php if($this->options->appBarRSS == true): ?>
+        
         <!-- icon:rss_feed -->
         
         <button id="open-rss-menu" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">&#xe0e5;</i></button>
@@ -96,6 +98,7 @@ echo '<div class="mdui-appbar appbar"  id="appbar"> ';
             <a href="<?php $this->options->commentsFeedUrl(); ?>" class="mdui-ripple">评论 RSS</a>
           </li>
         </ul>
+        <?php endif; ?>
         
     </div>
 </div>
