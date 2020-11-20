@@ -186,7 +186,14 @@ function themeConfig($form) {
       $pageSlogan = new Typecho_Widget_Helper_Form_Element_Text('pageSlogan', NULL, NULL, _t('首页 Banner 文字'), _t('该文字将会被输出在首页 Banner 上'));
         $form->addInput($pageSlogan);
     
-      $bannerImage = new Typecho_Widget_Helper_Form_Element_Text('bannerImage', NULL, NULL, _t('Banner 图片'), _t('Banner 背景图片（文章需要另外设置）'));
+
+
+        $bannerImage = new Typecho_Widget_Helper_Form_Element_Text(
+          'bannerImage',NULL,'https://cdn.jsdelivr.net/gh/MyBlog-GitHub/image-upload@main/uPic/Xci879.jpg',
+          _t('Banner 图片'),
+          _t('Banner 背景图片（文章可另外设置）')
+        );
+
         $form->addInput($bannerImage);
 
       $postMessage = new Typecho_Widget_Helper_Form_Element_Text('postMessage', NULL, NULL, _t('文章末尾信息'), _t('该信息将会在文章末尾显示（可标明版权等）'));
