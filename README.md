@@ -64,13 +64,6 @@
 git clone https://github.com/oCoke/MDT-For-Typecho.git
 ```
 
-OR:
-
-```bash
-npm init && npm i mdt-for-typecho --save
-```
-
-> 如果使用 NPM 安装，主题文件在 `node_module/mdt-for-typecho` 中。
 
 > 非常不推荐使用开发版，因为可能有不确定的不稳定因素，并且不一定有有利改动。<br>如果你使用开发版出现任何问题，欢迎通过 [Issues](https://github.com/oCoke/MDT-For-Typecho/issues) 反馈。
 
